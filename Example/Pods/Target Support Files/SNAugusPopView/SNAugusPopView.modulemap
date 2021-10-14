@@ -1,0 +1,6 @@
+framework module SNAugusPopView {
+  umbrella header "SNAugusPopView-umbrella.h"
+
+  export *
+  module * { export * }
+}
