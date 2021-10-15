@@ -139,20 +139,20 @@
 ## Installation
 
 * Static Library
-  * You can also add SNAugusPopView as a static library to your project or workspace.
+  * You can also add `SNAugusPopView` as a static library to your project or workspace.
     * Download the latest code version or add repository as a git submodule to your git-tracked project.
     * Open your project in Xcode, then drag and drop `SNAugusPopView.xcodeproj` onto your project or workspace (use the "Product Navigator view").
     * Select your target and go to the Build phases tab. In the Link Binary With Libraries section select the add button. On the sheet find and add `SNAugusPopView.framework`. You might also need to add `SNAugusPopView` to the Target Dependencies list.
     * Include MBProgressHUD wherever you need it with `#import <SNAugusPopView/SNAugusPopView.h>`.
 * Cocoapods
-  * Add a pod entry for SNAugusPopView to your Podfile `pod 'SNAugusPopView', '~> 0.1.0'`
+  * Add a pod entry for `SNAugusPopView` to your Podfile `pod 'SNAugusPopView', '~> 0.1.0'`
   * Install the pod(s) by running `pod install`
-  * Include SNAugusPopView wherever you need it with `#import <SNAugusPopView.h>`
+  * Include `SNAugusPopView` wherever you need it with `#import <SNAugusPopView.h>`
 * Source files
   * Alternatively you can directly add the `SNAugusPopView.h` and `SNAugusPopView.m` source files to your project.
     * Download the latest code version or add repository as a git submodule to your git-tracked project.
     *  Open your project in Xcode, then drag and drop `SNAugusPopView.h` and `SNAugusPopView.m` onto your project (use the "Product Navigator view").Make sure to select Copy Items when asked if you extracted the code archive outside of your project.
-    * Include SNAugusPopView wherever you need it with `#import <SNAugusPopView.h>`.
+    * Include `SNAugusPopView` wherever you need it with `#import <SNAugusPopView.h>`.
 
 ## Author
 
@@ -160,4 +160,4 @@
 
 ## License
 
-SNAugusPopView is available under the MIT license. See the [LICENSE](https://github.com/venn0126/SNAugusPopView/blob/main/LICENSE) for more info.
+`SNAugusPopView` is available under the MIT license. See the [LICENSE](https://github.com/venn0126/SNAugusPopView/blob/main/LICENSE) for more info.
