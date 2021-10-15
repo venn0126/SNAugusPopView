@@ -87,8 +87,8 @@
                 self.allPopView.gradientEndPoint = CGPointMake(0.0, 0.5);
                 self.allPopView.gradientLocations = @[@0.5,@1.0];
                 
-            //    self.allPopView.closeButtonBackgroundColor = UIColor.blackColor;
-            //    self.allPopView.leftImageBackgroundColor = UIColor.yellowColor;
+                self.allPopView.closeButtonBackgroundColor = UIColor.blackColor;
+                self.allPopView.leftImageBackgroundColor = UIColor.yellowColor;
                 
                 self.leftImagePopView.leftImageWidth = 30;
                 self.leftImagePopView.leftImageHeight = 15;
@@ -100,11 +100,11 @@
             case 1:{
 
                 self.mulLinesPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(30, 250, 0, 0) text:@"袅袅炊烟，小小村落，路上一道辙，你用你那母亲的脉搏和我诉说，我的祖国和我像海和浪花一朵MulLines" direction:SNAugusPopViewDirectionBottom singleLine:NO gradient:NO];
+                [self.view addSubview:self.mulLinesPopView];
                 self.mulLinesPopView.mulLineWidth = 100.0;
             //    self.mulLinesPopView.arrowVerticalPadding = 30.0;
                 self.mulLinesPopView.textAlignment = NSTextAlignmentLeft;
 
-                [self.view addSubview:self.mulLinesPopView];
             //    self.mulLinesPopView.backgroundColor = UIColor.yellowColor;
                 
                 self.mulLinesPopView.borderWidth = 5.0;
@@ -117,12 +117,11 @@
             case 2:{
 
                 self.topPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(160, self.testView.frame.origin.y + 60, 0, 0) text:@"请阅读并勾选以下协议Top" direction:SNAugusPopViewDirectionTop gradient:NO];
+                [self.view addSubview:self.topPopView];
                 self.topPopView.delegate = self;
                 self.topPopView.textFont = [UIFont systemFontOfSize:13];
 //                self.topPopView.arrowHorizontalPadding = 80;
             //    self.topPopView.textColor = UIColor.blueColor;
-            //    self.topPopView.textAlignment
-                [self.view addSubview:self.topPopView];
                 
                 [self.topPopView show];
                 break;
@@ -133,7 +132,6 @@
                 self.bottomPopView.delegate = self;
                 [self.view addSubview:self.bottomPopView];
                 
-            //    self.bottomPopView.verticalLabelPadding = 10;
 //                self.bottomPopView.arrowHorizontalPadding = 80;
                 self.bottomPopView.textFont = [UIFont systemFontOfSize:16];
                 
@@ -153,7 +151,6 @@
                 
                 self.leftPopView.textFont = [UIFont systemFontOfSize:10];
                 self.leftPopView.arrowVerticalPadding = 5.0;
-                // 255 52 179
                 self.leftPopView.aBackgroundRed = 0/255.0;
                 self.leftPopView.aBackgroundGreen = 191/255.0;
                 self.leftPopView.aBackgroundBlue = 255/255.0;
@@ -164,11 +161,8 @@
             case 5:{
 
                 self.rightPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(160, 100+25, 0, 0) text:@"请阅读并勾选以下协议Right" direction:SNAugusPopViewDirectionRight gradient:NO];
-                self.rightPopView.delegate = self;
                 [self.view addSubview:self.rightPopView];
-                
-                
-          
+                self.rightPopView.delegate = self;
                 self.rightPopView.textFont = [UIFont systemFontOfSize:10];
                 self.rightPopView.arrowVerticalPadding = 5;
                 self.rightPopView.textColor = UIColor.redColor;
@@ -186,8 +180,8 @@
             case 7:{
 
                 self.leftImagePopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(50, 580, 0, 0) text:@"请阅读并勾选以下协议LeftImage" direction:SNAugusPopViewDirectionBottom singleLine:YES leftImageName:@"left" gradient:NO];
-                
                 [self.view addSubview:self.leftImagePopView];
+                
                 self.leftImagePopView.leftImageWidth = 30;
                 self.leftImagePopView.leftImageHeight = 15;
                 
