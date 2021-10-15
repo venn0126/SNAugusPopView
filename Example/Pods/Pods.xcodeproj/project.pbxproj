@@ -44,7 +44,7 @@
 		141F5437F91849D6A9F3F984F94B2713 /* SNAugusPopView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SNAugusPopView.debug.xcconfig; sourceTree = "<group>"; };
 		2C65D848B2C1A7191E9351140B9E0C4B /* SNAugusPopView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SNAugusPopView-Info.plist"; sourceTree = "<group>"; };
 		2CEC23D77A94A7291B7671A78C1F7C4D /* Pods-SNAugusPopView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SNAugusPopView_Example-dummy.m"; sourceTree = "<group>"; };
-		2F6A0D81580622E5E933EAC6437CEC70 /* Pods_SNAugusPopView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SNAugusPopView_Example.framework; path = "Pods-SNAugusPopView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6A0D81580622E5E933EAC6437CEC70 /* Pods_SNAugusPopView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNAugusPopView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACEEEDD073A63A0E080FCD948BAB69 /* Pods-SNAugusPopView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SNAugusPopView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4BEA281C0D7551D3804DEC571AF8CD4D /* Pods-SNAugusPopView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SNAugusPopView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8A2A8B8599259AD4CF62CB7871C5FE /* Pods-SNAugusPopView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SNAugusPopView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -58,19 +58,19 @@
 		971A267FCE3F526B599F01C3979335DA /* Pods-SNAugusPopView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SNAugusPopView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		97340B36D925E27FD0D8629ACEC76538 /* SNAugusPopView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SNAugusPopView-umbrella.h"; sourceTree = "<group>"; };
 		98FF41362C54251372FFBB62C1D7B18C /* Pods-SNAugusPopView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SNAugusPopView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6CFD8515F398BBB827451483A2E5982 /* Pods-SNAugusPopView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SNAugusPopView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A70DC121F58F517A6D7770B353178A36 /* Pods-SNAugusPopView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SNAugusPopView_Example.modulemap"; sourceTree = "<group>"; };
 		A855897B0F7DB9118BB092248468867F /* Pods-SNAugusPopView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SNAugusPopView_Tests.modulemap"; sourceTree = "<group>"; };
 		AE33F05CB23D7DAE4681B599EBC0638C /* SNAugusPopView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SNAugusPopView.m; path = SNAugusPopView/Classes/SNAugusPopView.m; sourceTree = "<group>"; };
-		B688C4896407B8336E8F9E304478E274 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B688C4896407B8336E8F9E304478E274 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C65ADBEB0F1936E64C60439C119282AB /* SNAugusPopView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SNAugusPopView-dummy.m"; sourceTree = "<group>"; };
-		C778C94983798EE66613BAE7FF325639 /* SNAugusPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SNAugusPopView.framework; path = SNAugusPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C778C94983798EE66613BAE7FF325639 /* SNAugusPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SNAugusPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDAA9CE6629F678EAFBADF08B9BE7EB /* Pods-SNAugusPopView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SNAugusPopView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D3C39DE317F62ADA4640B17571F80B9A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F057DBAC533DB8E82C8F953220A1B7D0 /* Pods_SNAugusPopView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SNAugusPopView_Tests.framework; path = "Pods-SNAugusPopView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C39DE317F62ADA4640B17571F80B9A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F057DBAC533DB8E82C8F953220A1B7D0 /* Pods_SNAugusPopView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNAugusPopView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67EFEF8EA628DEF1017518DF758CB1F /* Pods-SNAugusPopView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SNAugusPopView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F69CABB1BA8D8FA1B7A01A95622DA8D7 /* SNAugusPopView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SNAugusPopView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F69CABB1BA8D8FA1B7A01A95622DA8D7 /* SNAugusPopView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SNAugusPopView.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		FA6E27B6E5AE7CF6F4D5686EAA95A3BD /* SNAugusPopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SNAugusPopView.h; path = SNAugusPopView/Classes/SNAugusPopView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -722,8 +722,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
