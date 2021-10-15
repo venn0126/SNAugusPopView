@@ -7,6 +7,8 @@
 
 ## Example
 
+* ![](https://github.com/venn0126/iOS-Study/blob/master/Resource/SNAugusPopViewExample.gif?raw=true)
+
 * Example0
 
   * ```objective-c
