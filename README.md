@@ -26,4 +26,4 @@ venn0126, venn221@gmail.com
 
 ## License
 
-SNAugusPopView is available under the MIT license. See the LICENSE file for more info.
+SNAugusPopView is available under the MIT license. See the [LICENSE](https://github.com/venn0126/SNAugusPopView/blob/main/LICENSE) for more info.
