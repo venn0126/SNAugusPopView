@@ -22,7 +22,7 @@ pod 'SNAugusPopView'
 
 ## Author
 
-venn0126, venn221@gmail.com
+* Augus
 
 ## License
 
