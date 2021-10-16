@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		032A72D4F61B9956AB992B0A02B3AD4F /* SNAugusPopView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97340B36D925E27FD0D8629ACEC76538 /* SNAugusPopView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07C0F3C6B46B86BD83F6F20CCDEC0A2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2B3B211FD81DF24C8399A36C35DAFAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2FAB3D6D2C2BF392A16535AE651A7346 /* SNAugusPopView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C65ADBEB0F1936E64C60439C119282AB /* SNAugusPopView-dummy.m */; };
-		555FF1880E8C999F00E8035A988F24D5 /* Pods-SNAugusPopView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC23D77A94A7291B7671A78C1F7C4D /* Pods-SNAugusPopView_Example-dummy.m */; };
-		5B8C70183B27D901151678B6DD6A7E2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		80E229B8969DE201FAF72BF0BC648F09 /* Pods-SNAugusPopView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 847EE32096A976D2F3843EF10A675174 /* Pods-SNAugusPopView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		82A8D7135F227423C93A3D038401A425 /* SNAugusPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE33F05CB23D7DAE4681B599EBC0638C /* SNAugusPopView.m */; };
-		A919557F5C8D861DF32AA7DABC6115E0 /* Pods-SNAugusPopView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFD8515F398BBB827451483A2E5982 /* Pods-SNAugusPopView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E421D85E18025BEB2071F4251B832079 /* SNAugusPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA6E27B6E5AE7CF6F4D5686EAA95A3BD /* SNAugusPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F97ABC94CF5B740240CEF77ED974E2BC /* Pods-SNAugusPopView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CB993CABA364149D87999719F6561 /* Pods-SNAugusPopView_Tests-dummy.m */; };
+		08E62F940360BD6A5C51BA7C223086AD /* SNAugusPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE33F05CB23D7DAE4681B599EBC0638C /* SNAugusPopView.m */; };
+		2410480169ACF992CEF9866292E5C782 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		42C6FE723922E4AD96E18EFE81FA6B5A /* SNAugusPopView.h in Headers */ = {isa = PBXBuildFile; fileRef = FA6E27B6E5AE7CF6F4D5686EAA95A3BD /* SNAugusPopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43810C2C3B2C79D9C07B327DBC12A4E8 /* Pods-SNAugusPopView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 860CB993CABA364149D87999719F6561 /* Pods-SNAugusPopView_Tests-dummy.m */; };
+		55556C2457AD39FEA3C114D8E81FC440 /* Pods-SNAugusPopView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC23D77A94A7291B7671A78C1F7C4D /* Pods-SNAugusPopView_Example-dummy.m */; };
+		5B4BD9CA6A959154F172969CEB5A0354 /* SNAugusPopView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97340B36D925E27FD0D8629ACEC76538 /* SNAugusPopView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68B213F60A21B35288CF3314EEF75AC4 /* Pods-SNAugusPopView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 847EE32096A976D2F3843EF10A675174 /* Pods-SNAugusPopView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A18E5DFCA06894088D720740F89CB1C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C39FB39440DBFB159FA152AC66A13923 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		EE376FB8A4B8F696B6841B4D96FC4CE7 /* SNAugusPopView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C65ADBEB0F1936E64C60439C119282AB /* SNAugusPopView-dummy.m */; };
+		F6547CE230D27868359EB9E58B779501 /* Pods-SNAugusPopView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CFD8515F398BBB827451483A2E5982 /* Pods-SNAugusPopView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		38BEE9F90C8E1359E08A2802FB5845AC /* PBXContainerItemProxy */ = {
+		17C175D76E530DB438B73D1D000E4F32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 66AC484C281DA916A9BA26A610950311;
 			remoteInfo = SNAugusPopView;
 		};
-		3F9B52EE2B958E39E62BC2386C847E8C /* PBXContainerItemProxy */ = {
+		68069A417055C450FAC46F93CF73F9AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -44,7 +44,7 @@
 		141F5437F91849D6A9F3F984F94B2713 /* SNAugusPopView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SNAugusPopView.debug.xcconfig; sourceTree = "<group>"; };
 		2C65D848B2C1A7191E9351140B9E0C4B /* SNAugusPopView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SNAugusPopView-Info.plist"; sourceTree = "<group>"; };
 		2CEC23D77A94A7291B7671A78C1F7C4D /* Pods-SNAugusPopView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SNAugusPopView_Example-dummy.m"; sourceTree = "<group>"; };
-		2F6A0D81580622E5E933EAC6437CEC70 /* Pods_SNAugusPopView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SNAugusPopView_Example.framework; path = "Pods-SNAugusPopView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6A0D81580622E5E933EAC6437CEC70 /* Pods-SNAugusPopView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SNAugusPopView_Example"; path = Pods_SNAugusPopView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ACEEEDD073A63A0E080FCD948BAB69 /* Pods-SNAugusPopView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SNAugusPopView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4BEA281C0D7551D3804DEC571AF8CD4D /* Pods-SNAugusPopView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SNAugusPopView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8A2A8B8599259AD4CF62CB7871C5FE /* Pods-SNAugusPopView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SNAugusPopView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -65,37 +65,37 @@
 		AE33F05CB23D7DAE4681B599EBC0638C /* SNAugusPopView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SNAugusPopView.m; path = SNAugusPopView/Classes/SNAugusPopView.m; sourceTree = "<group>"; };
 		B688C4896407B8336E8F9E304478E274 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		C65ADBEB0F1936E64C60439C119282AB /* SNAugusPopView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SNAugusPopView-dummy.m"; sourceTree = "<group>"; };
-		C778C94983798EE66613BAE7FF325639 /* SNAugusPopView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SNAugusPopView.framework; path = SNAugusPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C778C94983798EE66613BAE7FF325639 /* SNAugusPopView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SNAugusPopView; path = SNAugusPopView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDAA9CE6629F678EAFBADF08B9BE7EB /* Pods-SNAugusPopView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SNAugusPopView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D3C39DE317F62ADA4640B17571F80B9A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		F057DBAC533DB8E82C8F953220A1B7D0 /* Pods_SNAugusPopView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SNAugusPopView_Tests.framework; path = "Pods-SNAugusPopView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F057DBAC533DB8E82C8F953220A1B7D0 /* Pods-SNAugusPopView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SNAugusPopView_Tests"; path = Pods_SNAugusPopView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67EFEF8EA628DEF1017518DF758CB1F /* Pods-SNAugusPopView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SNAugusPopView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F69CABB1BA8D8FA1B7A01A95622DA8D7 /* SNAugusPopView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SNAugusPopView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FA6E27B6E5AE7CF6F4D5686EAA95A3BD /* SNAugusPopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SNAugusPopView.h; path = SNAugusPopView/Classes/SNAugusPopView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4090ABBE4ACEACD165B9C52AE35ED8B0 /* Frameworks */ = {
+		3883A477CB133F8B6B7AA4F638788935 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B8C70183B27D901151678B6DD6A7E2E /* Foundation.framework in Frameworks */,
+				C39FB39440DBFB159FA152AC66A13923 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DD7E6D24FBA8ECEE53AC692CB99484F /* Frameworks */ = {
+		3DF309F44495F91A824D506C3A208334 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B3B211FD81DF24C8399A36C35DAFAA4 /* Foundation.framework in Frameworks */,
+				2410480169ACF992CEF9866292E5C782 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9AFCB58135B4EB2F2B6DC2E2CDAA89E /* Frameworks */ = {
+		A342D5E75090160D73FD16708C1D9CCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C0F3C6B46B86BD83F6F20CCDEC0A2B /* Foundation.framework in Frameworks */,
+				A18E5DFCA06894088D720740F89CB1C8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,16 +126,6 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		58C0E3A9A7786FE08DFEE8A4B45539D2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2F6A0D81580622E5E933EAC6437CEC70 /* Pods_SNAugusPopView_Example.framework */,
-				F057DBAC533DB8E82C8F953220A1B7D0 /* Pods_SNAugusPopView_Tests.framework */,
-				C778C94983798EE66613BAE7FF325639 /* SNAugusPopView.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8780CB7AC78FED0D06364C892ABEEFDF /* Support Files */ = {
@@ -188,7 +178,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				106D5D0950696B042F6AC14FA36283CC /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				58C0E3A9A7786FE08DFEE8A4B45539D2 /* Products */,
+				FD3658BD1CFE35C524837C6D35A39BB9 /* Products */,
 				FDA04860943FB5EC8232FCF3643827E3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -217,6 +207,16 @@
 			path = "Target Support Files/Pods-SNAugusPopView_Tests";
 			sourceTree = "<group>";
 		};
+		FD3658BD1CFE35C524837C6D35A39BB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F6A0D81580622E5E933EAC6437CEC70 /* Pods-SNAugusPopView_Example */,
+				F057DBAC533DB8E82C8F953220A1B7D0 /* Pods-SNAugusPopView_Tests */,
+				C778C94983798EE66613BAE7FF325639 /* SNAugusPopView */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FDA04860943FB5EC8232FCF3643827E3 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,28 +229,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		984A09063FE840F658288E0FAC53E389 /* Headers */ = {
+		648F18D06C282400AC6337F69A49C4D3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80E229B8969DE201FAF72BF0BC648F09 /* Pods-SNAugusPopView_Example-umbrella.h in Headers */,
+				68B213F60A21B35288CF3314EEF75AC4 /* Pods-SNAugusPopView_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9EAC22AD0BA058F2373582E9A06484A6 /* Headers */ = {
+		8A0E38ACDC0BA3F78FE9B0D2FA399D7A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A919557F5C8D861DF32AA7DABC6115E0 /* Pods-SNAugusPopView_Tests-umbrella.h in Headers */,
+				F6547CE230D27868359EB9E58B779501 /* Pods-SNAugusPopView_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB5FA2A1C3E3146757B1D3B65D60B54F /* Headers */ = {
+		940967134E6D8178B2E1541C30197170 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032A72D4F61B9956AB992B0A02B3AD4F /* SNAugusPopView-umbrella.h in Headers */,
-				E421D85E18025BEB2071F4251B832079 /* SNAugusPopView.h in Headers */,
+				42C6FE723922E4AD96E18EFE81FA6B5A /* SNAugusPopView.h in Headers */,
+				5B4BD9CA6A959154F172969CEB5A0354 /* SNAugusPopView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +259,12 @@
 /* Begin PBXNativeTarget section */
 		66AC484C281DA916A9BA26A610950311 /* SNAugusPopView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8935E12E36D10072FC638D6E8FD9497F /* Build configuration list for PBXNativeTarget "SNAugusPopView" */;
+			buildConfigurationList = 8D92BD704E730AF3296ECD0AF75F3C60 /* Build configuration list for PBXNativeTarget "SNAugusPopView" */;
 			buildPhases = (
-				CB5FA2A1C3E3146757B1D3B65D60B54F /* Headers */,
-				2A8B361F490F99DAEE7F7FEA2EF19370 /* Sources */,
-				8DD7E6D24FBA8ECEE53AC692CB99484F /* Frameworks */,
-				AA92EA94DECBD29F21C4F5DC13A379CC /* Resources */,
+				940967134E6D8178B2E1541C30197170 /* Headers */,
+				A91D05821881EF5AB1194A0858162ADC /* Sources */,
+				3DF309F44495F91A824D506C3A208334 /* Frameworks */,
+				EC6F191D020E77D310A342EF0BAA87A4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -272,45 +272,45 @@
 			);
 			name = SNAugusPopView;
 			productName = SNAugusPopView;
-			productReference = C778C94983798EE66613BAE7FF325639 /* SNAugusPopView.framework */;
+			productReference = C778C94983798EE66613BAE7FF325639 /* SNAugusPopView */;
 			productType = "com.apple.product-type.framework";
 		};
 		D1B85ACB17D9A5B3C43C737A2D209899 /* Pods-SNAugusPopView_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C428149270C576165351E92D02A9A5E /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Tests" */;
+			buildConfigurationList = 8FE5971E5F2EAF6B5DD873CAF4F26F68 /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Tests" */;
 			buildPhases = (
-				9EAC22AD0BA058F2373582E9A06484A6 /* Headers */,
-				63227F35ED26F315C6B87D4A3A415242 /* Sources */,
-				C9AFCB58135B4EB2F2B6DC2E2CDAA89E /* Frameworks */,
-				07BB81DBECF4B7B9E0BA9F8DE5863DC6 /* Resources */,
+				8A0E38ACDC0BA3F78FE9B0D2FA399D7A /* Headers */,
+				FAC1DE848760D14EB343BE05D73BB377 /* Sources */,
+				A342D5E75090160D73FD16708C1D9CCE /* Frameworks */,
+				D869F02B9C15FAA11E43D27E9724F647 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				461BBA7101CE79F71C6A44A3A73AE71C /* PBXTargetDependency */,
+				7636A028A15530C82974F1DA91992314 /* PBXTargetDependency */,
 			);
 			name = "Pods-SNAugusPopView_Tests";
-			productName = "Pods-SNAugusPopView_Tests";
-			productReference = F057DBAC533DB8E82C8F953220A1B7D0 /* Pods_SNAugusPopView_Tests.framework */;
+			productName = Pods_SNAugusPopView_Tests;
+			productReference = F057DBAC533DB8E82C8F953220A1B7D0 /* Pods-SNAugusPopView_Tests */;
 			productType = "com.apple.product-type.framework";
 		};
 		D9D9202BC2A84FD866B805763194AE3E /* Pods-SNAugusPopView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B838E400D38FEA6AC132C5D603036C3 /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Example" */;
+			buildConfigurationList = 1C9D3B4121F04FA423739A23BCAA0F8F /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Example" */;
 			buildPhases = (
-				984A09063FE840F658288E0FAC53E389 /* Headers */,
-				89F0FC31B98FCE25DAB348B6987A3B44 /* Sources */,
-				4090ABBE4ACEACD165B9C52AE35ED8B0 /* Frameworks */,
-				096C2219D89EE59F6C522E4BCFEA36E2 /* Resources */,
+				648F18D06C282400AC6337F69A49C4D3 /* Headers */,
+				394820B00990AECA90697D2EFB0B06AE /* Sources */,
+				3883A477CB133F8B6B7AA4F638788935 /* Frameworks */,
+				94506AEF0D1E46C3E541D6F98C57FC6D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				120F1B9C8BB7BB62FD4364C118A2C40A /* PBXTargetDependency */,
+				00BF90C74606715FA2BD2CC318C77510 /* PBXTargetDependency */,
 			);
 			name = "Pods-SNAugusPopView_Example";
-			productName = "Pods-SNAugusPopView_Example";
-			productReference = 2F6A0D81580622E5E933EAC6437CEC70 /* Pods_SNAugusPopView_Example.framework */;
+			productName = Pods_SNAugusPopView_Example;
+			productReference = 2F6A0D81580622E5E933EAC6437CEC70 /* Pods-SNAugusPopView_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -319,19 +319,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 58C0E3A9A7786FE08DFEE8A4B45539D2 /* Products */;
+			productRefGroup = FD3658BD1CFE35C524837C6D35A39BB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -343,21 +343,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		07BB81DBECF4B7B9E0BA9F8DE5863DC6 /* Resources */ = {
+		94506AEF0D1E46C3E541D6F98C57FC6D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		096C2219D89EE59F6C522E4BCFEA36E2 /* Resources */ = {
+		D869F02B9C15FAA11E43D27E9724F647 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA92EA94DECBD29F21C4F5DC13A379CC /* Resources */ = {
+		EC6F191D020E77D310A342EF0BAA87A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,82 +367,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A8B361F490F99DAEE7F7FEA2EF19370 /* Sources */ = {
+		394820B00990AECA90697D2EFB0B06AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FAB3D6D2C2BF392A16535AE651A7346 /* SNAugusPopView-dummy.m in Sources */,
-				82A8D7135F227423C93A3D038401A425 /* SNAugusPopView.m in Sources */,
+				55556C2457AD39FEA3C114D8E81FC440 /* Pods-SNAugusPopView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63227F35ED26F315C6B87D4A3A415242 /* Sources */ = {
+		A91D05821881EF5AB1194A0858162ADC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F97ABC94CF5B740240CEF77ED974E2BC /* Pods-SNAugusPopView_Tests-dummy.m in Sources */,
+				08E62F940360BD6A5C51BA7C223086AD /* SNAugusPopView.m in Sources */,
+				EE376FB8A4B8F696B6841B4D96FC4CE7 /* SNAugusPopView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89F0FC31B98FCE25DAB348B6987A3B44 /* Sources */ = {
+		FAC1DE848760D14EB343BE05D73BB377 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				555FF1880E8C999F00E8035A988F24D5 /* Pods-SNAugusPopView_Example-dummy.m in Sources */,
+				43810C2C3B2C79D9C07B327DBC12A4E8 /* Pods-SNAugusPopView_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		120F1B9C8BB7BB62FD4364C118A2C40A /* PBXTargetDependency */ = {
+		00BF90C74606715FA2BD2CC318C77510 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SNAugusPopView;
 			target = 66AC484C281DA916A9BA26A610950311 /* SNAugusPopView */;
-			targetProxy = 38BEE9F90C8E1359E08A2802FB5845AC /* PBXContainerItemProxy */;
+			targetProxy = 17C175D76E530DB438B73D1D000E4F32 /* PBXContainerItemProxy */;
 		};
-		461BBA7101CE79F71C6A44A3A73AE71C /* PBXTargetDependency */ = {
+		7636A028A15530C82974F1DA91992314 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SNAugusPopView_Example";
 			target = D9D9202BC2A84FD866B805763194AE3E /* Pods-SNAugusPopView_Example */;
-			targetProxy = 3F9B52EE2B958E39E62BC2386C847E8C /* PBXContainerItemProxy */;
+			targetProxy = 68069A417055C450FAC46F93CF73F9AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0FD83C3F2C5E0A059FB71010D1D859CA /* Debug */ = {
+		0AA3B2CBE62A1F418A565F4A111A412B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 141F5437F91849D6A9F3F984F94B2713 /* SNAugusPopView.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SNAugusPopView/SNAugusPopView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SNAugusPopView/SNAugusPopView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SNAugusPopView/SNAugusPopView.modulemap";
-				PRODUCT_MODULE_NAME = SNAugusPopView;
-				PRODUCT_NAME = SNAugusPopView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1192D066B67C80BEC4A13982F2F17A4B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02AA68FE2FA86B3B5DCD5A414D4AA475 /* Pods-SNAugusPopView_Tests.release.xcconfig */;
+			baseConfigurationReference = CCDAA9CE6629F678EAFBADF08B9BE7EB /* Pods-SNAugusPopView_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -453,12 +423,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SNAugusPopView_Example/Pods-SNAugusPopView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SNAugusPopView_Example/Pods-SNAugusPopView_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -467,11 +437,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -539,7 +508,7 @@
 			};
 			name = Debug;
 		};
-		4526C44D809BC2838BA8C574E8FB5564 /* Release */ = {
+		9473D476C65D8A8D93A5E7350B1F7051 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 98FF41362C54251372FFBB62C1D7B18C /* Pods-SNAugusPopView_Example.release.xcconfig */;
 			buildSettings = {
@@ -572,39 +541,7 @@
 			};
 			name = Release;
 		};
-		9E79EE23C75516F1B8F1C2A6DBBC085C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BEA281C0D7551D3804DEC571AF8CD4D /* Pods-SNAugusPopView_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A3F8E575D2A0E136F645BFDDDA4EEB33 /* Release */ = {
+		A0F730F16D7E661899310AE4D0E96CA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1053F3E1209D3F40508CB608F26F0D7C /* SNAugusPopView.release.xcconfig */;
 			buildSettings = {
@@ -634,38 +571,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		BC27A9C2DA983B1DC310119A888B3E4B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCDAA9CE6629F678EAFBADF08B9BE7EB /* Pods-SNAugusPopView_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SNAugusPopView_Example/Pods-SNAugusPopView_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SNAugusPopView_Example/Pods-SNAugusPopView_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -729,14 +634,109 @@
 			};
 			name = Release;
 		};
+		D9A52B7EA11B7893D8FF2F4DE962E480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02AA68FE2FA86B3B5DCD5A414D4AA475 /* Pods-SNAugusPopView_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DB19DF38A0089D63E6F936A9A9852285 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BEA281C0D7551D3804DEC571AF8CD4D /* Pods-SNAugusPopView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DCD02344E9207EC6394B5043E42DD7BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141F5437F91849D6A9F3F984F94B2713 /* SNAugusPopView.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SNAugusPopView/SNAugusPopView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SNAugusPopView/SNAugusPopView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SNAugusPopView/SNAugusPopView.modulemap";
+				PRODUCT_MODULE_NAME = SNAugusPopView;
+				PRODUCT_NAME = SNAugusPopView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3C428149270C576165351E92D02A9A5E /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Tests" */ = {
+		1C9D3B4121F04FA423739A23BCAA0F8F /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E79EE23C75516F1B8F1C2A6DBBC085C /* Debug */,
-				1192D066B67C80BEC4A13982F2F17A4B /* Release */,
+				0AA3B2CBE62A1F418A565F4A111A412B /* Debug */,
+				9473D476C65D8A8D93A5E7350B1F7051 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -750,20 +750,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B838E400D38FEA6AC132C5D603036C3 /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Example" */ = {
+		8D92BD704E730AF3296ECD0AF75F3C60 /* Build configuration list for PBXNativeTarget "SNAugusPopView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC27A9C2DA983B1DC310119A888B3E4B /* Debug */,
-				4526C44D809BC2838BA8C574E8FB5564 /* Release */,
+				DCD02344E9207EC6394B5043E42DD7BB /* Debug */,
+				A0F730F16D7E661899310AE4D0E96CA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8935E12E36D10072FC638D6E8FD9497F /* Build configuration list for PBXNativeTarget "SNAugusPopView" */ = {
+		8FE5971E5F2EAF6B5DD873CAF4F26F68 /* Build configuration list for PBXNativeTarget "Pods-SNAugusPopView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0FD83C3F2C5E0A059FB71010D1D859CA /* Debug */,
-				A3F8E575D2A0E136F645BFDDDA4EEB33 /* Release */,
+				DB19DF38A0089D63E6F936A9A9852285 /* Debug */,
+				D9A52B7EA11B7893D8FF2F4DE962E480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

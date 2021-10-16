@@ -685,15 +685,16 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 //    self.alpha = 0.01;
     self.backgroundColor = [UIColor colorWithRed:self.aBackgroundRed green:self.aBackgroundGreen blue:self.aBackgroundBlue alpha:0.01];
 
-    
+    CGFloat sWidth = self.bounds.size.width;
+    CGFloat sHeight = self.bounds.size.height;
     if (self.direction == SNAugusPopViewDirectionTop) {
-        self.layer.anchorPoint = CGPointMake(0.1, 0.1);
+        self.layer.anchorPoint = CGPointMake((self.arrowHorizontalPadding + self.arrowWidth * 0.5) / sWidth,self.arrowHeight / sHeight);
     }else if(self.direction == SNAugusPopViewDirectionBottom) {
-        self.layer.anchorPoint = CGPointMake(0.1, 0.8);
+        self.layer.anchorPoint = CGPointMake((self.arrowHorizontalPadding + self.arrowWidth * 0.5) / sWidth, (sHeight - self.arrowHeight) / sHeight);
     }else if(self.direction == SNAugusPopViewDirectionRight) {
-        self.layer.anchorPoint = CGPointMake(1, 0.5);
+        self.layer.anchorPoint = CGPointMake(1.0, (self.arrowVerticalPadding + self.arrowWidth * 0.5) / sHeight);
     }else if(self.direction == SNAugusPopViewDirectionLeft) {
-        self.layer.anchorPoint = CGPointMake(0.0, 0.5);
+        self.layer.anchorPoint = CGPointMake(0.0, (self.arrowVerticalPadding + self.arrowWidth * 0.5) / sHeight);
     } else {
         self.layer.anchorPoint = CGPointMake(0.5, 0.5);
     }
