@@ -1,7 +1,7 @@
 {
   "name": "SNAugusPopView",
   "version": "0.1.0",
-  "summary": "A short description of SNAugusPopView.",
+  "summary": "A very lightweight popView.",
   "description": "The popView support some directions of arrow,and show gradient and border effect.",
   "homepage": "https://github.com/venn0126/SNAugusPopView",
   "license": {
