@@ -5,6 +5,14 @@
 [![License](https://img.shields.io/cocoapods/l/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
 [![Platform](https://img.shields.io/cocoapods/p/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
 
+## Features
+
+* High performance: The conversion performance is close to handwriting code, and only a instance global.
+* Automatic layout: The text label can be automatically layout depend to single or not.
+* The alpha: Set the popView alpha is no effect text alpha.
+* High custom: You can set any property that you want to.
+* Lightweight:The library contains only 2 files,all file code total 800+ lines.
+
 ## Example
 
 ![](https://github.com/venn0126/iOS-Study/blob/master/Resource/SNAugusPopViewExample.gif?raw=true)
