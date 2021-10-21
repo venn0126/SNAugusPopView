@@ -7,7 +7,7 @@
 
 ## Features
 
-* High performance: The conversion performance is close to handwriting code, and only a instance global.
+* High performance: The library's dependencies all use system libraries and files , only a instance global.
 * Automatic layout: The text label can be automatically layout depend to single or not.
 * The alpha: Set the popView alpha is no effect text alpha.
 * High custom: You can set any property that you want to.
