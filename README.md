@@ -151,7 +151,7 @@
     * Download the latest code version or add repository as a git submodule to your git-tracked project.
     * Open your project in Xcode, then drag and drop `SNAugusPopView.xcodeproj` onto your project or workspace (use the "Product Navigator view").
     * Select your target and go to the Build phases tab. In the Link Binary With Libraries section select the add button. On the sheet find and add `SNAugusPopView.framework`. You might also need to add `SNAugusPopView` to the Target Dependencies list.
-    * Include MBProgressHUD wherever you need it with `#import <SNAugusPopView/SNAugusPopView.h>`.
+    * Include SNAugusPopView wherever you need it with `#import <SNAugusPopView/SNAugusPopView.h>`.
 * Cocoapods
   * Add a pod entry for `SNAugusPopView` to your Podfile `pod 'SNAugusPopView', '~> 0.1.0'`
   * Install the pod(s) by running `pod install`
