@@ -99,7 +99,7 @@
             }
             case 1:{
 
-                self.mulLinesPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(30, 250, 0, 0) text:@"袅袅炊烟，小小村落，路上一道辙，你用你那母亲的脉搏和我诉说，我的祖国和我像海和浪花一朵MulLines" direction:SNAugusPopViewDirectionBottom singleLine:NO gradient:NO];
+                self.mulLinesPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(30, 270, 0, 0) text:@"袅袅炊烟，小小村落，路上一道辙，你用你那母亲的脉搏和我诉说，我的祖国和我像海和浪花一朵MulLines" direction:SNAugusPopViewDirectionBottom singleLine:NO gradient:NO];
                 [self.view addSubview:self.mulLinesPopView];
                 self.mulLinesPopView.mulLineWidth = 100.0;
             //    self.mulLinesPopView.arrowVerticalPadding = 30.0;
