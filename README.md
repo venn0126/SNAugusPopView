@@ -344,7 +344,7 @@ SNAugusPopView
 
 ## 作者
 
-* 牛小布
+* Augus
 
 ## 许可证
 
