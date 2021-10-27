@@ -121,6 +121,8 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 @property (nonatomic, assign) CGFloat mulLineWidth;
 
 // About close button.
+/// The close button's  name,default is @"".
+@property (nonatomic, copy) NSString *closeButtonName;
 /// The close button's padding from left margin or subview.
 @property (nonatomic, assign) CGFloat closeButtonleading;
 /// The close button's padding from top margin or subview.

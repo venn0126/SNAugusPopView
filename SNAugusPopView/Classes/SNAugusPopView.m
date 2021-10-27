@@ -53,8 +53,6 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 @property (nonatomic, assign) BOOL showing;
 /// The popView's text is single or multiple.
 @property (nonatomic, assign) BOOL singleLine;
-/// The closeButton's name.
-@property (nonatomic, copy) NSString *closeButtonName;
 /// The closeButton custom.
 @property (nonatomic, strong) UIButton *closeButton;
 /// The leftImageView custom.
@@ -290,6 +288,11 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     [self configurePopView];
 }
 
+
+- (void)setCloseButtonName:(NSString *)closeButtonName {
+    _closeButtonName = closeButtonName;
+    [self configurePopView];
+}
 
 - (void)setCloseButtonTopPadding:(CGFloat)closeButtonTopPadding {
     _closeButtonTopPadding = closeButtonTopPadding;

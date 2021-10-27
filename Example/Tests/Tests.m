@@ -83,7 +83,19 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     [rootView addSubview:popView];
     [popView show];
     SNTestAugusPopViewIsVisible(popView, rootView);
+
+    XCTAssertFalse(popView.hidden);
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+        [popView dismiss];
+        XCTAssertTrue(popView.hidden);
+
+    });
     
+    [popView removeFromSuperview];
+    [popView showToView:rootView];
+    XCTAssertFalse([rootView.subviews containsObject:popView]);
 }
 
 #pragma mark - Text
@@ -98,8 +110,7 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     popView.textColor = UIColor.redColor;
     popView.textFont = [UIFont systemFontOfSize:15];
     popView.textAlignment = NSTextAlignmentRight;
-    
-    
+
     XCTAssertNotNil(popView.text);
     XCTAssertEqual(popView.text, @"我喜欢高田");
     
@@ -112,6 +123,40 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     XCTAssertNotNil(@(popView.textAlignment));
     XCTAssertEqual(popView.textAlignment, NSTextAlignmentRight);
     
+
+    
+}
+
+
+#pragma mark - BackgroundColor Alpha
+
+- (void)testPopViewBackgroundColorAlpha {
+    
+    UIViewController *rootViewController = UIApplication.sharedApplication.windows.firstObject.rootViewController;
+    UIView *rootView = rootViewController.view;
+    SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectZero text:@"" direction:SNAugusPopViewDirectionTop gradient:NO];
+    [rootView addSubview:popView];
+    
+    popView.cornerRadius = 3.0;
+    popView.aBackgroundShowAlpha = 0.6;
+    popView.aBackgroundRed = 0.2;
+    popView.aBackgroundGreen = 0.3;
+    popView.aBackgroundBlue = 0.4;
+    
+    XCTAssertNotNil(@(popView.cornerRadius));
+    XCTAssertEqual(popView.cornerRadius, 3.0);
+    
+    XCTAssertNotNil(@(popView.aBackgroundShowAlpha));
+    XCTAssertEqual(popView.aBackgroundShowAlpha, 0.6);
+    
+    XCTAssertNotNil(@(popView.aBackgroundRed));
+    XCTAssertEqual(popView.aBackgroundRed, 0.2);
+
+    XCTAssertNotNil(@(popView.aBackgroundGreen));
+    XCTAssertEqual(popView.aBackgroundGreen, 0.3);
+    
+    XCTAssertNotNil(@(popView.aBackgroundBlue));
+    XCTAssertEqual(popView.aBackgroundBlue, 0.4);
 }
 
 
@@ -170,7 +215,7 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectZero text:@"" direction:SNAugusPopViewDirectionTop gradient:NO];
     [rootView addSubview:popView];
     
-//    popView.direction = SNAugusPopViewDirectionRight;
+    popView.direction = SNAugusPopViewDirectionRight;
     // for direction left and right
     popView.labelHorizontalPadding = 3.0;
     // for direction bottom and top
@@ -181,6 +226,10 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
 //
     popView.arrowWidth = 16.0;
     popView.arrowHeight = 8.0;
+    
+    XCTAssertNotNil(@(popView.direction));
+    XCTAssertEqual(@(popView.direction), @(SNAugusPopViewDirectionRight));
+    
     
     XCTAssertNotNil(@(popView.labelHorizontalPadding));
     XCTAssertEqual(popView.labelHorizontalPadding, 3.0);
@@ -228,11 +277,15 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectZero text:@"" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" gradient:NO];
     [rootView addSubview:popView];
     
+    popView.closeButtonName = @"love";
     popView.closeButtonleading = 10.0;
     popView.closeButtonTopPadding = 7.0;
     popView.closeButtonWidth = 5.0;
     popView.closeButtonHeight = 8.0;
     popView.closeButtonBackgroundColor = UIColor.redColor;
+    
+    XCTAssertTrue((popView.closeButtonName.length > 0));
+    XCTAssertEqual(popView.closeButtonName, @"love");
     
     XCTAssertNotNil(@(popView.closeButtonleading));
     XCTAssertEqual(popView.closeButtonleading, 10.0);
@@ -260,10 +313,14 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectZero text:@"" direction:SNAugusPopViewDirectionTop singleLine:YES leftImageName:@"" gradient:NO];
     [rootView addSubview:popView];
     
+    popView.leftImageName = @"tian";
     popView.leftImageWidth = 12.0;
     popView.leftImageHeight = 16.0;
     popView.leftImageLabelPadding = 11.0;
     popView.leftImageBackgroundColor = UIColor.redColor;
+    
+    XCTAssertTrue((popView.leftImageName.length > 0));
+    XCTAssertEqual(popView.leftImageName, @"tian");
     
     XCTAssertNotNil(@(popView.leftImageWidth));
     XCTAssertEqual(popView.leftImageWidth, 12.0);
