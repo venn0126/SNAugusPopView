@@ -410,41 +410,81 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     CGFloat cWidth = self.textWidth + 2 * self.labelHorizontalPadding;
     CGFloat cHeight = self.textHeight + 2 * self.labelVerticalPadding;
     
+    // add has arrow padding
+    if (self.direction == SNAugusPopViewDirectionTop || self.direction == SNAugusPopViewDirectionBottom) {
+        cHeight += + self.arrowHeight;
+    } else if(self.direction == SNAugusPopViewDirectionLeft || self.direction == SNAugusPopViewDirectionRight) {
+        cWidth += + self.arrowHeight;
+    }
     
     // left image name
     // default support single line + left image
     if (self.leftImageName.length > 0 && self.singleLine) {
-        self.leftImageView.image = [UIImage imageNamed:self.leftImageName];
+        CGFloat x = self.leftImageLabelPadding;
         CGFloat y = (cHeight - self.leftImageHeight) * 0.5;
-        self.leftImageView.frame = CGRectMake(self.labelHorizontalPadding, y, self.leftImageWidth, self.leftImageHeight);
+        if (self.direction == SNAugusPopViewDirectionTop) {
+            y = (cHeight - self.leftImageHeight - self.arrowHeight) * 0.5 + self.arrowHeight;
+        }else if(self.direction == SNAugusPopViewDirectionBottom) {
+            y = (cHeight - self.leftImageHeight - self.arrowHeight) * 0.5;
+        }else if(self.direction == SNAugusPopViewDirectionLeft) {
+            x += self.arrowHeight;
+            y = (cHeight - self.leftImageHeight) * 0.5;
+        }else if(self.direction == SNAugusPopViewDirectionRight) {
+
+        }
         
-        cWidth += self.leftImageView.frame.size.width + self.leftImageLabelPadding;
+        self.leftImageView.image = [UIImage imageNamed:self.leftImageName];
+        self.leftImageView.frame = CGRectMake(x, y, self.leftImageWidth, self.leftImageHeight);
+        cWidth += self.leftImageWidth + self.leftImageLabelPadding;
         [self addSubview:self.leftImageView];
     }
     
     // add textLabel depend on leftImageView
     [self addSubview:self.textLabel];
     
-    if (self.direction == SNAugusPopViewDirectionTop || self.direction == SNAugusPopViewDirectionBottom) {
-        cHeight = cHeight + self.arrowHeight;
-    } else if(self.direction == SNAugusPopViewDirectionLeft || self.direction == SNAugusPopViewDirectionRight) {
-        cWidth = cWidth + self.arrowHeight;
-    }
-    
     // single line & mul line
     if (self.singleLine) { // single line
         CGFloat x = self.labelHorizontalPadding;
-        if (self.leftImageView.frame.origin.x > 0) {
-            x = self.leftImageView.frame.origin.x + self.leftImageView.frame.size.width + self.leftImageLabelPadding;
+        CGFloat y = self.labelVerticalPadding;
+        if (self.direction == SNAugusPopViewDirectionTop) {
+            y += self.arrowHeight;
+        }else if(self.direction == SNAugusPopViewDirectionBottom) {
+            
+        }else if(self.direction == SNAugusPopViewDirectionLeft) {
+            x += self.arrowHeight;
+        } else if(self.direction == SNAugusPopViewDirectionRight) {
+            
         }
-        self.textLabel.frame = CGRectMake(x, self.labelVerticalPadding,self.textWidth, self.textHeight);
+        // no leftImageView
+        if (self.leftImageName.length > 0) {
+            x += self.leftImageWidth + self.leftImageLabelPadding;
+        }
+        self.textLabel.frame = CGRectMake(x, y,self.textWidth, self.textHeight);
+
     } else {// mul lines
         // set width
         self.textLabel.numberOfLines = 0;
-        self.textLabel.frame = CGRectMake(self.labelHorizontalPadding, self.labelVerticalPadding * 0.5, self.mulLineWidth, self.mulLineTextHeight);
         cWidth = self.mulLineWidth + 2 * self.labelHorizontalPadding;
         cHeight = self.mulLineTextHeight + 2 * self.labelVerticalPadding;
         
+        if (self.direction == SNAugusPopViewDirectionTop || self.direction == SNAugusPopViewDirectionBottom) {
+            cHeight += + self.arrowHeight;
+        } else if(self.direction == SNAugusPopViewDirectionLeft || self.direction == SNAugusPopViewDirectionRight) {
+            cWidth += + self.arrowHeight;
+        }
+        
+        CGFloat x = self.labelHorizontalPadding;
+        CGFloat y = self.labelVerticalPadding;
+        if (self.direction == SNAugusPopViewDirectionTop) {
+            y += self.arrowHeight;
+        }else if(self.direction == SNAugusPopViewDirectionBottom) {
+            
+        }else if(self.direction == SNAugusPopViewDirectionLeft) {
+            x += self.arrowHeight;
+        } else if(self.direction == SNAugusPopViewDirectionRight) {
+            
+        }
+        self.textLabel.frame = CGRectMake(x, y, self.mulLineWidth, self.mulLineTextHeight);
     }
     
     
@@ -453,13 +493,36 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
         
         if (self.singleLine) {
             
-            CGFloat y = (cHeight - self.closeButtonHeight - ((self.direction == SNAugusPopViewDirectionNone) ? 0 : self.arrowHeight)) * 0.5;
-            self.closeButton.frame = CGRectMake(self.textLabel.frame.origin.x + self.textLabel.frame.size.width + self.closeButtonleading, y, self.closeButtonWidth, self.closeButtonHeight);
+            CGFloat x = self.textLabel.frame.origin.x + self.textLabel.frame.size.width + self.closeButtonleading;
+            CGFloat y = (cHeight - self.closeButtonHeight) * 0.5;
 
+            if (self.direction == SNAugusPopViewDirectionTop) {
+                y += self.arrowHeight * 0.5;
+            } else if(self.direction == SNAugusPopViewDirectionBottom) {
+                y -= self.arrowHeight * 0.5;
+            } else if(self.direction == SNAugusPopViewDirectionLeft) {
+                
+            }else if(self.direction == SNAugusPopViewDirectionRight) {
+                
+            }
+            self.closeButton.frame = CGRectMake(x, y, self.closeButtonWidth, self.closeButtonHeight);
+            
         } else {
-            CGFloat mulY = (cHeight - self.mulLineTextHeight - self.arrowHeight) * 0.5;
-            self.textLabel.frame = CGRectMake(self.textLabel.frame.origin.x, mulY, self.textLabel.frame.size.width, self.textLabel.frame.size.height);
-            self.closeButton.frame = CGRectMake(self.textLabel.frame.origin.x + self.textLabel.frame.size.width + self.closeButtonleading, self.closeButtonTopPadding, self.closeButtonWidth, self.closeButtonHeight);
+            
+            CGFloat y = self.labelVerticalPadding;
+            CGFloat x = self.labelHorizontalPadding;
+            
+            if (self.direction == SNAugusPopViewDirectionTop) {
+                y += self.arrowHeight;
+            } else if(self.direction == SNAugusPopViewDirectionBottom) {
+                
+            } else if(self.direction == SNAugusPopViewDirectionLeft) {
+                x += self.arrowHeight;
+            }else if(self.direction == SNAugusPopViewDirectionRight) {
+                
+            }
+            self.textLabel.frame = CGRectMake(x, y, self.textLabel.frame.size.width, self.textLabel.frame.size.height);
+            self.closeButton.frame = CGRectMake(self.textLabel.frame.origin.x + self.textLabel.frame.size.width + self.closeButtonleading, y, self.closeButtonWidth, self.closeButtonHeight);
         }
         
         cWidth += self.closeButton.frame.size.width + self.closeButtonleading;
@@ -556,18 +619,13 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     CGFloat minX = 0, minY = 0, maxX = self.bounds.size.width, maxY = self.bounds.size.height;
     if (direction == SNAugusPopViewDirectionTop) {
         minY = height;
-        self.textLabel.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5 + height * 0.5);
     }else if (_direction == SNAugusPopViewDirectionRight){
         maxX -= height;
-        self.textLabel.center = CGPointMake(self.bounds.size.width * 0.5 - height * 0.5, self.bounds.size.height * 0.5);
     }else if (_direction == SNAugusPopViewDirectionLeft){
         minX += height;
-        self.textLabel.center = CGPointMake(self.bounds.size.width * 0.5 + height * 0.5, self.bounds.size.height * 0.5);
     }else if (_direction == SNAugusPopViewDirectionBottom){
         maxY -= height;
-    } else {
-        self.textLabel.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
-    }
+    } 
     
     // top line
     [path moveToPoint:CGPointMake(minX + cornerRadius, minY)];
