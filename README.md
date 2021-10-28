@@ -1,6 +1,6 @@
 # SNAugusPopView
 
-[![CI Status](https://img.shields.io/travis/venn0126/SNAugusPopView.svg?style=flat)](https://travis-ci.org/venn0126/SNAugusPopView)
+[![CI Status](https://app.travis-ci.com/travis-ci/travis-web.svg?branch=master)](https://app.travis-ci.com/travis-ci/travis-web)](https://travis-ci.org/venn0126/SNAugusPopView)
 [![Version](https://img.shields.io/cocoapods/v/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
 [![License](https://img.shields.io/cocoapods/l/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
 [![Platform](https://img.shields.io/cocoapods/p/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
