@@ -173,7 +173,7 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 @property (nonatomic, weak) id<SNAugusPopViewDelagate> delegate;
 
 
-/// A pop view  designated initalzation
+/// A pop view  designated initialzation
 /// @param frame A origin of pop view and size is auto calucate
 /// @param text  A text of pop View
 /// @param direction A text of popView's arrow direction
@@ -219,6 +219,17 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
                      gradient:(BOOL)gradient;
 
 
+/// A popView convenience initialzation method.If you use the method,you need to define the customView's content and frame,and the popView will show your customView's content.
+/// @param frame A customView's frame
+/// @param customView A customView instance.
+/// @param direction A popView arrow's direction.
+/// @param gradient A popView whether need to gradient effect.
+- (instancetype)initWithCustomeViewFrame:(CGRect)frame
+                   customView:(UIView *)customView
+                    direction:(SNAugusPopViewDirection)direction
+                     gradient:(BOOL)gradient;
+
+
 /// A popView show method.
 - (void)show;
 
@@ -230,9 +241,6 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 /// Show popView to super view.
 /// @param toView A super view.
 - (void)showToView:(UIView *)toView;
-
-
-// TODO: The customView for popView
 
 @end
 
