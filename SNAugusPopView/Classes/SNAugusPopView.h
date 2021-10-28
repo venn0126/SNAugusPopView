@@ -175,6 +175,7 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 
 /// A pop view  designated initialzation
 /// @param frame A origin of pop view and size is auto calucate
+/// @param customView A customView instance.
 /// @param text  A text of pop View
 /// @param direction A text of popView's arrow direction
 /// @param singleLine YES is 1 line, and NO is mul lines
@@ -182,6 +183,7 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 /// @param leftImageName A imageView in centerY and left ,if name = @"" stand for not show
 /// @param gradient The popView has gradient effect or not,you need to set about gradient attributes,eg gradientColors, or no working
 - (instancetype)initWithFrame:(CGRect)frame
+                   customView:(UIView * __nullable)customView
                          text:(NSString *)text
                     direction:(SNAugusPopViewDirection)direction
                    singleLine:(BOOL)singleLine
@@ -224,7 +226,7 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 /// @param customView A customView instance.
 /// @param direction A popView arrow's direction.
 /// @param gradient A popView whether need to gradient effect.
-- (instancetype)initWithCustomeViewFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
                    customView:(UIView *)customView
                     direction:(SNAugusPopViewDirection)direction
                      gradient:(BOOL)gradient;

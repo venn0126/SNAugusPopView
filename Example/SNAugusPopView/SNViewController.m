@@ -74,9 +74,9 @@
         switch (i) {
             case 0:{
 
-                self.allPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(200, 700, 0, 0) text:@"请阅读并勾选以下协议勾选以下协议All" direction:SNAugusPopViewDirectionNone singleLine:YES closeButtonName:@"close" leftImageName:@"left" gradient:YES];
+                self.allPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(200, 700, 0, 0) customView:nil text:@"请阅读并勾选以下协议勾选以下协议All" direction:SNAugusPopViewDirectionNone singleLine:YES closeButtonName:@"close" leftImageName:@"left" gradient:YES];
 
-            //    self.allPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(50, 750, 0, 0) text:@"请阅读并勾选以下协议勾选以下协议发发现新的炼金珠女呗冲啊擦法All" direction:SNAugusPopViewDirectionBottom singleLine:NO closeButtonName:@"close" leftImageName:@"left" gradient:YES];
+//                self.allPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(50, 750, 0, 0)  customView:nil text:@"请阅读并勾选以下协议勾选以下协议发发现新的炼金珠女呗冲啊擦法All" direction:SNAugusPopViewDirectionBottom singleLine:NO closeButtonName:@"close" leftImageName:@"left" gradient:YES];
 
                 [self.view addSubview:self.allPopView];
 

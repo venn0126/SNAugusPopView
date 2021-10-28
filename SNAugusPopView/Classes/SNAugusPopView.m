@@ -68,21 +68,22 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 #pragma mark - Initalzation
 
 - (instancetype)init {
-    return [self initWithFrame:CGRectZero text:@"请阅读并勾选以下协议" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:NO];
+    return [self initWithFrame:CGRectZero customView:nil text:@"请阅读并勾选以下协议" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:NO];
 }
 
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
-    return [self initWithFrame:CGRectZero text:@"请阅读并勾选以下协议" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:NO];
+    return [self initWithFrame:CGRectZero customView:nil text:@"请阅读并勾选以下协议" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:NO];
 }
 
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame text:@"请阅读并勾选以下协议" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:NO];;
+    return [self initWithFrame:frame customView:nil text:@"请阅读并勾选以下协议" direction:SNAugusPopViewDirectionTop singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:NO];;
 }
 
 
 - (instancetype)initWithFrame:(CGRect)frame
+                   customView:(UIView *)customView
                          text:(NSString *)text
                     direction:(SNAugusPopViewDirection)direction
                    singleLine:(BOOL)singleLine
@@ -154,7 +155,11 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     _leftImageName = leftImageName;
     
     // set up ui
-    [self configurePopView];
+    if (customView) {// customView
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
     
     // add gesture to view
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
@@ -171,7 +176,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
               closeButtonName:(NSString *)closeButtonName
                      gradient:(BOOL)gradient {
     
-    return [self initWithFrame:frame text:text direction:direction singleLine:singleLine closeButtonName:closeButtonName leftImageName:@"" gradient:gradient];
+    return [self initWithFrame:frame customView:nil text:text direction:direction singleLine:singleLine closeButtonName:closeButtonName leftImageName:@"" gradient:gradient];
 }
 
 
@@ -182,7 +187,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
                 leftImageName:(NSString *)leftImageName
                      gradient:(BOOL)gradient {
     
-    return [self initWithFrame:frame text:text direction:direction singleLine:singleLine closeButtonName:@"" leftImageName:leftImageName gradient:gradient];
+    return [self initWithFrame:frame customView:nil text:text direction:direction singleLine:singleLine closeButtonName:@"" leftImageName:leftImageName gradient:gradient];
 }
 
 
@@ -192,7 +197,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
                    singleLine:(BOOL)singleLine
                      gradient:(BOOL)gradient {
     
-    return [self initWithFrame:frame text:text direction:direction singleLine:singleLine closeButtonName:@"" leftImageName:@"" gradient:gradient];
+    return [self initWithFrame:frame customView:nil text:text direction:direction singleLine:singleLine closeButtonName:@"" leftImageName:@"" gradient:gradient];
 }
 
 
@@ -201,8 +206,17 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
                     direction:(SNAugusPopViewDirection)direction
                      gradient:(BOOL)gradient {
 
-    return [self initWithFrame:frame text:text direction:direction singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:gradient];
+    return [self initWithFrame:frame customView:nil text:text direction:direction singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:gradient];
     
+}
+
+
+- (instancetype)initWithFrame:(CGRect)frame
+                   customView:(UIView *)customView
+                    direction:(SNAugusPopViewDirection)direction
+                     gradient:(BOOL)gradient {
+    
+    return [self initWithFrame:frame customView:customView text:@"" direction:direction singleLine:YES closeButtonName:@"" leftImageName:@"" gradient:gradient];
 }
 
 #pragma mark - Setter
@@ -541,6 +555,12 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
         offset = self.arrowVerticalPadding + self.arrowWidth * 0.5;
     }
     [self addArrowBorderoffset:offset width:self.arrowWidth height:self.arrowHeight cornerRadius:self.cornerRadius direction:self.direction];
+    
+}
+
+
+- (void)configureCustomView {
+    
     
 }
 

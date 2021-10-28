@@ -41,7 +41,7 @@
 		0991F5B4A451E1EA2B1DD9F0 /* Pods-SNAugusPopView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNAugusPopView_Example.release.xcconfig"; path = "Target Support Files/Pods-SNAugusPopView_Example/Pods-SNAugusPopView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0FAA5B49A28CE9FDFAADB21A /* Pods-SNAugusPopView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNAugusPopView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SNAugusPopView_Tests/Pods-SNAugusPopView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		19BF343A3373D96B3C72C73B /* Pods_SNAugusPopView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNAugusPopView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25BD505C7D580FAB997F7247 /* SNAugusPopView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SNAugusPopView.podspec; path = ../SNAugusPopView.podspec; sourceTree = "<group>"; };
+		25BD505C7D580FAB997F7247 /* SNAugusPopView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SNAugusPopView.podspec; path = ../SNAugusPopView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* SNAugusPopView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNAugusPopView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,8 +65,8 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF00DDCB2746737978F718E8 /* Pods_SNAugusPopView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNAugusPopView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E7C931DD9C3C9F92DFA1D4 /* Pods-SNAugusPopView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNAugusPopView_Example.debug.xcconfig"; path = "Target Support Files/Pods-SNAugusPopView_Example/Pods-SNAugusPopView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CB9B24E15F2B4E8E79F4F79D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		EB4EDDF46F7923F1A24F615C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CB9B24E15F2B4E8E79F4F79D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EB4EDDF46F7923F1A24F615C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				0FAA5B49A28CE9FDFAADB21A /* Pods-SNAugusPopView_Tests.debug.xcconfig */,
 				02E2DC36C7C3041124CF1539 /* Pods-SNAugusPopView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
