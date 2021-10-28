@@ -16,7 +16,7 @@ SNAugusPopView
 
 ## Example
 
-![](https://github.com/venn0126/iOS-Study/blob/master/Resource/SNAugusPopViewExample.gif?raw=true)
+![](https://github.com/venn0126/iOS-Study/blob/master/Resource/SNAugusPopViewDemo.gif?raw=true)
 
 * Example0
 
