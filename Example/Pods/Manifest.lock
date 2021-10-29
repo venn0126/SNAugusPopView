@@ -1,5 +1,5 @@
 PODS:
-  - SNAugusPopView (0.2.1)
+  - SNAugusPopView (0.3.0)
 
 DEPENDENCIES:
   - SNAugusPopView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SNAugusPopView: bb4c407e079d31e3be4c50760d869c0a7e4d9809
+  SNAugusPopView: 1955d6323e5ed7942beb80a5e873c5369ca36d73
 
 PODFILE CHECKSUM: e6c1a9e38bb07defae4f12050104f423a38f56e5
 
