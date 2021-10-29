@@ -104,8 +104,10 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 /// The popView's arrow direction.
 @property (nonatomic, assign) SNAugusPopViewDirection direction;
 /// The popView's label padding from left and right margins.
+/// If customView not nil,stand for customView padding from popView's left and right margins.
 @property (nonatomic, assign) CGFloat labelHorizontalPadding;
 /// The popView's label padding from top and bottom margins.
+/// If customView not nil,stand for customView padding from popView's top and bottom margins.
 @property (nonatomic, assign) CGFloat labelVerticalPadding;
 
 /// The arrow padding from left margin or subView when direction is bottom and top.
@@ -168,6 +170,10 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
  * interpolated. Defaults to nil. Animatable. */
 /// The gradient effect's location,default is [0,1].
 @property(nonatomic, copy) NSArray<NSNumber *> *gradientLocations;
+
+/// A popView's custom view instance property.
+@property (nonatomic, strong) UIView *customView;
+
 
 /// The popView's click action delegate.
 @property (nonatomic, weak) id<SNAugusPopViewDelagate> delegate;

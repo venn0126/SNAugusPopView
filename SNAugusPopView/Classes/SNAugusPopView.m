@@ -154,8 +154,9 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     _closeButtonName = closeButtonName;
     _leftImageName = leftImageName;
     
+    _customView = customView;
     // set up ui
-    if (customView) {// customView
+    if (customView) {
         [self configureCustomView];
     } else {
         [self configurePopView];
@@ -242,43 +243,71 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 - (void)setLabelHorizontalPadding:(CGFloat)labelHorizontalPadding {
     _labelHorizontalPadding = labelHorizontalPadding;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 
 }
 
 
 - (void)setLabelVerticalPadding:(CGFloat)labelVerticalPadding {
     _labelVerticalPadding = labelVerticalPadding;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     _cornerRadius = cornerRadius;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 }
 
 
 - (void)setArrowWidth:(CGFloat)arrowWidth {
     _arrowWidth = arrowWidth;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 }
 
 
 - (void)setArrowHeight:(CGFloat)arrowHeight {
     _arrowHeight = arrowHeight;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 }
 
 
 - (void)setArrowHorizontalPadding:(CGFloat)arrowHorizontalPadding {
     _arrowHorizontalPadding = arrowHorizontalPadding;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 }
 
 
 - (void)setArrowVerticalPadding:(CGFloat)arrowVerticalPadding {
     _arrowVerticalPadding = arrowVerticalPadding;
-    [self configurePopView];
+    if (self.customView) {
+        [self configureCustomView];
+    } else {
+        [self configurePopView];
+    }
 }
 
 
@@ -411,6 +440,12 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     self.leftImageView.backgroundColor = _leftImageBackgroundColor;
 }
 
+
+- (void)setCustomView:(UIView *)customView {
+    _customView = customView;
+    [self configureCustomView];
+}
+
 #pragma mark - Set up UI
 
 - (void)configurePopView {
@@ -426,9 +461,9 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     
     // add has arrow padding
     if (self.direction == SNAugusPopViewDirectionTop || self.direction == SNAugusPopViewDirectionBottom) {
-        cHeight += + self.arrowHeight;
+        cHeight += self.arrowHeight;
     } else if(self.direction == SNAugusPopViewDirectionLeft || self.direction == SNAugusPopViewDirectionRight) {
-        cWidth += + self.arrowHeight;
+        cWidth += self.arrowHeight;
     }
     
     // left image name
@@ -561,6 +596,48 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 - (void)configureCustomView {
     
+    // cwidth depend on text and font
+    CGFloat cWidth = self.customView.bounds.size.width + 2 * self.labelHorizontalPadding;
+    CGFloat cHeight = self.customView.bounds.size.height + 2 * self.labelVerticalPadding;
+    
+    // add has arrow padding
+    if (self.direction == SNAugusPopViewDirectionTop || self.direction == SNAugusPopViewDirectionBottom) {
+        cHeight += self.arrowHeight;
+    } else if(self.direction == SNAugusPopViewDirectionLeft || self.direction == SNAugusPopViewDirectionRight) {
+        cWidth += self.arrowHeight;
+    }
+    
+    // add custom view
+    if (![self.subviews containsObject:self.customView]) {
+        [self addSubview:self.customView];
+    }
+    
+    CGFloat x = self.labelHorizontalPadding;
+    CGFloat y = self.labelVerticalPadding;
+    if (self.direction == SNAugusPopViewDirectionTop) {
+        y += self.arrowHeight;
+    } else if(self.direction == SNAugusPopViewDirectionBottom) {
+        
+    } else if(self.direction == SNAugusPopViewDirectionLeft) {
+        x += self.arrowHeight;
+    }else if(self.direction == SNAugusPopViewDirectionRight) {
+        
+    }
+    self.customView.frame = CGRectMake(x, y, self.customView.bounds.size.width, self.customView.bounds.size.height);
+    
+    
+    // layout
+    self.bounds = CGRectMake(0, 0, cWidth, cHeight);
+    self.hidden = YES;
+    
+    // draw background mask
+    CGFloat offset = 0;
+    if (self.direction == SNAugusPopViewDirectionTop || self.direction == SNAugusPopViewDirectionBottom) {
+        offset = self.arrowHorizontalPadding + self.arrowWidth * 0.5;
+    } else if(self.direction == SNAugusPopViewDirectionLeft || self.direction == SNAugusPopViewDirectionRight) {
+        offset = self.arrowVerticalPadding + self.arrowWidth * 0.5;
+    }
+    [self addArrowBorderoffset:offset width:self.arrowWidth height:self.arrowHeight cornerRadius:self.cornerRadius direction:self.direction];
     
 }
 
@@ -824,16 +901,12 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     }
     
     BOOL isContained = NO;
-    for (UIView *subView in toView.subviews) {
-        if ([subView isKindOfClass:[SNAugusPopView class]]) {
-            isContained = YES;
-        }
+    if ([toView.subviews containsObject:self]) {
+        isContained = YES;
     }
-    
     if (isContained) {
         return;
     }
-    
     [toView addSubview:self];
     [self show];
 }
@@ -850,7 +923,6 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 - (void)closeButtonAction:(UIButton *)sender {
     [self dismiss];
 }
-
 
 
 #pragma mark - Lazy Load
@@ -877,7 +949,6 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     return _closeButton;
 }
 
-
 - (UIImageView *)leftImageView {
     if (!_leftImageView) {
         _leftImageView = [[UIImageView alloc] init];
@@ -885,14 +956,5 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     }
     return _leftImageView;
 }
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

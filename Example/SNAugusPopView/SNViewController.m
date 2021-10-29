@@ -23,6 +23,8 @@
 @property (nonatomic, strong) SNAugusPopView *closePopView;
 @property (nonatomic, strong) SNAugusPopView *leftImagePopView;
 
+@property (nonatomic, strong) SNAugusPopView *customViewPopView;
+
 @property (nonatomic, copy) NSArray *buttonTitles;
 @property (nonatomic, strong) UIView *testView;
 
@@ -55,7 +57,7 @@
     CGFloat popViewWidth = (self.view.bounds.size.width - 5 * padding) * 0.25;
     CGFloat popViewY = 300;
     // 30,300
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 9; i++) {
         UIButton *popViewButton = [[UIButton alloc] init];
         popViewButton.titleLabel.font = [UIFont systemFontOfSize:11];
         popViewButton.backgroundColor = UIColor.greenColor;
@@ -67,8 +69,10 @@
         [popViewButton setTitle:self.buttonTitles[i] forState:UIControlStateNormal];
         if (i < 4) {
             popViewButton.frame = CGRectMake((i + 1) * padding + i * popViewWidth, popViewY, popViewWidth, popViewHeight);
+        } else if(i < 8) {
+            popViewButton.frame = CGRectMake((i - 3) * padding + (i - 4) * popViewWidth, popViewY + 1 * (popViewHeight + padding), popViewWidth, popViewHeight);
         } else {
-            popViewButton.frame = CGRectMake((i - 3) * padding + (i - 4) * popViewWidth, popViewY + popViewHeight + padding, popViewWidth, popViewHeight);
+            popViewButton.frame = CGRectMake((i - 7) * padding + (i - 8) * popViewWidth, popViewY + 2 * (popViewHeight + padding), popViewWidth, popViewHeight);
         }
         
         switch (i) {
@@ -177,7 +181,7 @@
             }
             case 6:{
 
-                self.closePopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(280, 480, 0, 0) text:@"请阅读并勾选以下协议SingleClose" direction:SNAugusPopViewDirectionRight singleLine:YES closeButtonName:@"Close" gradient:NO];
+                self.closePopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(280, 500, 0, 0) text:@"请阅读并勾选以下协议SingleClose" direction:SNAugusPopViewDirectionRight singleLine:YES closeButtonName:@"Close" gradient:NO];
                 [self.view addSubview:self.closePopView];
                 
                 [self.closePopView show];
@@ -193,6 +197,30 @@
                 
                 
                 [self.leftImagePopView show];
+                
+                break;
+            }
+            case 8:{
+
+                UILabel *testLabel = [[UILabel alloc] init];
+                testLabel.frame = CGRectMake(0, 0, 180, 40);
+                testLabel.text = @"轻击播放键，解放双眼。文案可配置轻击播放键，解放双眼，轻击播放键，解放双眼";
+                testLabel.numberOfLines = 0;
+                testLabel.font = [UIFont systemFontOfSize:12];
+            //    testLabel.backgroundColor = UIColor.greenColor;
+                testLabel.textColor = UIColor.whiteColor;
+                
+                
+                self.customViewPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(200, 280, 0, 0) customView:testLabel direction:SNAugusPopViewDirectionBottom gradient:NO];
+                self.customViewPopView.arrowHorizontalPadding = 50;
+//                self.customViewPopView.labelHorizontalPadding = 20;
+//                self.customViewPopView.labelVerticalPadding = 15;
+                self.customViewPopView.arrowWidth = 20;
+                self.customViewPopView.arrowHeight = 12;
+                [self.view addSubview:self.customViewPopView];
+        
+                [self.customViewPopView show];
+//                self.customViewPopView.customView = nil;
                 
                 break;
             }
@@ -219,6 +247,8 @@
         [self.closePopView show];
     }else if(sender.tag == 7) {
         [self.leftImagePopView show];
+    }else if(sender.tag == 8) {
+        [self.customViewPopView show];
     }
     
 }
@@ -232,7 +262,7 @@
 
 - (NSArray *)buttonTitles {
     if (!_buttonTitles) {
-        _buttonTitles = @[@"showAll",@"showMulLines",@"showTop",@"showBottom",@"showLeft",@"showRight",@"showClose",@"showLeftImage"];
+        _buttonTitles = @[@"showAll",@"showMulLines",@"showTop",@"showBottom",@"showLeft",@"showRight",@"showClose",@"showLeftImage",@"customView"];
     }
     return _buttonTitles;
 }

@@ -66,7 +66,7 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     }
     XCTAssertNotNil([[SNAugusPopView alloc] initWithCoder:dummyUnarchiver]);
     XCTAssertNotNil([[SNAugusPopView alloc] initWithFrame:CGRectZero]);
-    XCTAssertNotNil([[SNAugusPopView alloc] initWithFrame:CGRectZero text:@"" direction:SNAugusPopViewDirectionTop singleLine:NO closeButtonName:@"" leftImageName:@"" gradient:NO]);
+    XCTAssertNotNil([[SNAugusPopView alloc] initWithFrame:CGRectZero customView:nil text:@"" direction:SNAugusPopViewDirectionTop singleLine:NO closeButtonName:@"" leftImageName:@"" gradient:NO]);
     
 }
 
@@ -92,10 +92,13 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
         XCTAssertTrue(popView.hidden);
 
     });
-    
-    [popView removeFromSuperview];
+
+    [popView removeFromSuperview];    
     [popView showToView:rootView];
-    XCTAssertFalse([rootView.subviews containsObject:popView]);
+    XCTAssertFalse(popView.hidden);
+    XCTAssertTrue([rootView.subviews containsObject:popView]);
+
+    
 }
 
 #pragma mark - Text
@@ -365,6 +368,52 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     XCTAssertNotNil(popView.gradientLocations);
     XCTAssertEqual(popView.gradientLocations.firstObject, locations.firstObject);
     XCTAssertEqual(popView.gradientLocations.lastObject, locations.lastObject);
+}
+
+#pragma mark - CustomView
+
+- (void)testPopViewCustomView {
+    
+    UIViewController *rootViewController = UIApplication.sharedApplication.windows.firstObject.rootViewController;
+    UIView *rootView = rootViewController.view;
+    
+    UILabel *testLabel = [[UILabel alloc] init];
+    testLabel.frame = CGRectMake(0, 0, 180, 40);
+    testLabel.text = @"轻击播放键，解放双眼。文案可配置轻击播放键，解放双眼，轻击播放键，解放双眼";
+    testLabel.numberOfLines = 0;
+    testLabel.font = [UIFont systemFontOfSize:12];
+    testLabel.textColor = UIColor.whiteColor;
+    
+    SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(40, 50, 120, 50) customView:testLabel direction:SNAugusPopViewDirectionBottom gradient:NO];
+    popView.cornerRadius = 2.0;
+    popView.labelHorizontalPadding = 3.0;
+    popView.labelVerticalPadding = 4.0;
+    popView.arrowWidth = 11;
+    popView.arrowHeight = 8;
+    
+    XCTAssertNotNil(popView);
+    [rootView addSubview:popView];
+    
+//    popView.customView = nil;
+    XCTAssertNotNil(popView.customView);
+    XCTAssertEqual(popView.customView, testLabel);
+    
+    XCTAssertNotNil(@(popView.cornerRadius));
+    XCTAssertEqual(popView.cornerRadius, 2.0);
+    
+    XCTAssertNotNil(@(popView.labelHorizontalPadding));
+    XCTAssertEqual(popView.labelHorizontalPadding, 3.0);
+    
+    XCTAssertNotNil(@(popView.labelVerticalPadding));
+    XCTAssertEqual(popView.labelVerticalPadding, 4.0);
+    
+    XCTAssertNotNil(@(popView.arrowWidth));
+    XCTAssertEqual(popView.arrowWidth, 11.0);
+    
+    XCTAssertNotNil(@(popView.arrowHeight));
+    XCTAssertEqual(popView.arrowHeight, 8.0);
+    
+    
 }
 
 
