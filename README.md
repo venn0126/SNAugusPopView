@@ -138,6 +138,30 @@
   [self.leftImagePopView show];
   ```
 
+
+* Example8
+
+  ```objc
+  UILabel *testLabel = [[UILabel alloc] init];
+  testLabel.frame = CGRectMake(0, 0, 180, 40);
+  testLabel.text = @"This is a custom view example.This is a custom view example.This is a custom view example.";
+  testLabel.numberOfLines = 0;
+  testLabel.font = [UIFont systemFontOfSize:12];
+  testLabel.textColor = UIColor.whiteColor;
+  
+  self.customViewPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(200, 280, 0, 0) customView:testLabel direction:SNAugusPopViewDirectionBottom gradient:NO];
+  self.customViewPopView.arrowHorizontalPadding = 50; 
+  // Custom use labelHorizontalPadding to set padding to popView's left and right margins.
+  self.customViewPopView.labelHorizontalPadding = 20;
+  // Custom use labelVerticalPadding to set padding to popView's top and bottom margins.
+  self.customViewPopView.labelVerticalPadding = 15;
+  self.customViewPopView.arrowWidth = 20;
+  self.customViewPopView.arrowHeight = 12;
+  [self.view addSubview:self.customViewPopView];
+  
+  [self.customViewPopView show];
+  ```
+
 ## Requirements
 
 * `SNAugusPopView` works on iOS 9.0+. It depends on the following Apple Frameworks, which should already be include with most Xcode Templates:
@@ -318,7 +342,28 @@
   [self.leftImagePopView show];
   ```
 
+* 例子8
 
+  ```objc
+  UILabel *testLabel = [[UILabel alloc] init];
+  testLabel.frame = CGRectMake(0, 0, 180, 40);
+  testLabel.text = @"轻击播放键，解放双眼。文案可配置轻击播放键，解放双眼，轻击播放键，解放双眼";
+  testLabel.numberOfLines = 0;
+  testLabel.font = [UIFont systemFontOfSize:12];
+  testLabel.textColor = UIColor.whiteColor;
+  
+  self.customViewPopView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(200, 280, 0, 0) customView:testLabel direction:SNAugusPopViewDirectionBottom gradient:NO];
+  self.customViewPopView.arrowHorizontalPadding = 50; 
+  // Custom use labelHorizontalPadding to set padding to popView's left and right margins.
+  self.customViewPopView.labelHorizontalPadding = 20;
+  // Custom use labelVerticalPadding to set padding to popView's top and bottom margins.
+  self.customViewPopView.labelVerticalPadding = 15;
+  self.customViewPopView.arrowWidth = 20;
+  self.customViewPopView.arrowHeight = 12;
+  [self.view addSubview:self.customViewPopView];
+  
+  [self.customViewPopView show];
+  ```
 
 ## 依赖
 
