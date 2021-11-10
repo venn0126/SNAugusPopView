@@ -12,7 +12,7 @@
 * The alpha: Set the popView alpha is no effect text alpha.
 * High custom: You can set any property that you want to.
 * Lightweight:The library contains only 2 files,all file code total 800+ lines.
-* Docs and unit test：100% docs coverage, 100% code coverage.
+* Docs and unit test：100% docs coverage, 99.2% code coverage.
 
 ## Example
 
@@ -208,7 +208,7 @@
 * 透明度：设置弹出框的透明度不会影响文本透明底，二者并行。
 * 高度自定义：使用者可以任意设置你想设置的属性。
 * 轻量级：该库只有头文件和实现文件，总代码800行左右。
-* 文档和单元测试：文档覆盖率100%，代码覆盖率100%。
+* 文档和单元测试：文档覆盖率100%，代码覆盖率99.2%。
 
 ## 示例
 
