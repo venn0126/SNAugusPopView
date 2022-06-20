@@ -246,6 +246,16 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 - (void)dismiss;
 
 
+/// A popView dismiss by a delay time
+/// @param delay a delay time
+- (void)dismissWithDelay:(NSTimeInterval)delay;
+
+
+/// A popView dismiss by a delay time and block
+/// @param delay a delay time
+/// @param completion a finish block
+- (void)dismissWithDelay:(NSTimeInterval)delay completion:(void (^ __nullable)(BOOL finished))completion;
+
 /// Show popView to super view.
 /// @param toView A super view.
 - (void)showToView:(UIView *)toView;

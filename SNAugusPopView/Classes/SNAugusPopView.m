@@ -836,12 +836,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 - (void)show {
     
-//    if (self.showing) {
-//        return;
-//    }
-    
     self.transform = CGAffineTransformMakeScale(0.01,0.01);
-//    self.alpha = 0.01;
     self.backgroundColor = [UIColor colorWithRed:self.aBackgroundRed green:self.aBackgroundGreen blue:self.aBackgroundBlue alpha:0.01];
 
     CGFloat sWidth = self.bounds.size.width;
@@ -862,7 +857,6 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     CGFloat showDuration = self.showDuration > 0 ? self.showDuration : kAugusPopViewShowDuration;
         
     [UIView animateWithDuration:showDuration animations:^{
-//        self.alpha = 0.7;
         self.backgroundColor = [UIColor colorWithRed:self.aBackgroundRed green:self.aBackgroundGreen blue:self.aBackgroundBlue alpha:self.aBackgroundShowAlpha];
         self.hidden = NO;
 
@@ -871,7 +865,6 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     } completion:^(BOOL finished) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
-//            [self dismiss];
             NSLog(@"finish show");
         });
         
@@ -880,19 +873,43 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 }
 
 
+#pragma mark - Dismiss Public Actions
+
 - (void)dismiss {
     
-    self.showing = NO;
     [UIView animateWithDuration:self.dismissDuration animations:^{
-//        self.alpha = 0.01;
         self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.01];
-
         self.transform = CGAffineTransformMakeScale(0.01, 0.01);
     } completion:^(BOOL finished) {
-//        [self removeAugusBorder];
-//        [self removeFromSuperview];
-        NSLog(@"finish dismiss");
+        self.showing = NO;
     }];
+}
+
+
+- (void)dismissWithDelay:(NSTimeInterval)delay {
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:self.dismissDuration animations:^{
+            self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.01];
+            self.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        } completion:^(BOOL finished) {
+            self.showing = NO;
+        }];
+    });
+}
+
+
+- (void)dismissWithDelay:(NSTimeInterval)delay completion:(void (^)(BOOL))completion {
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:self.dismissDuration animations:^{
+            self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.01];
+            self.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        } completion:completion];
+    });
+    
 }
 
 - (void)showToView:(UIView *)toView {

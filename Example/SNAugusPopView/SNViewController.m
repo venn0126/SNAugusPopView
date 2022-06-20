@@ -220,6 +220,10 @@
                 [self.view addSubview:self.customViewPopView];
         
                 [self.customViewPopView show];
+//                [self.customViewPopView dismissWithDelay:5];
+//                [self.customViewPopView dismissWithDelay:3 completion:^(BOOL finished) {
+//                    NSLog(@"finsied %@",@(finished));
+//                }];
 //                self.customViewPopView.customView = nil;
                 
                 break;
