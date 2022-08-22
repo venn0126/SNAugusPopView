@@ -94,11 +94,13 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 
 // About popView animation.
 /// The popView display animation duration,default is 3.
-@property (nonatomic, assign) NSTimeInterval animationDuration;
+@property (nonatomic, assign) NSTimeInterval delayDismissDuration;
 /// The popView show animation duration,default is 0.3.
 @property (nonatomic, assign) NSTimeInterval showDuration;
 /// The popView dismiss animation duration,default is 0.3.
 @property (nonatomic, assign) NSTimeInterval dismissDuration;
+/// The popView is showing or not.
+@property (nonatomic, assign) BOOL showing;
 
 
 /// The popView's arrow direction.
@@ -241,24 +243,31 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 /// A popView show method.
 - (void)show;
 
+/// A popView show method and delay time dismiss.
+- (void)showWithDismissDelay:(NSTimeInterval)delay;
 
-/// A popView dismiss method.
-- (void)dismiss;
-
-
-/// A popView dismiss by a delay time
-/// @param delay a delay time
-- (void)dismissWithDelay:(NSTimeInterval)delay;
-
-
-/// A popView dismiss by a delay time and block
-/// @param delay a delay time
-/// @param completion a finish block
-- (void)dismissWithDelay:(NSTimeInterval)delay completion:(void (^ __nullable)(BOOL finished))completion;
+/// A popView show method and delay time dismiss completion.
+/// The delay only greater than delayDismissDuration to call dismiss,or not dismiss.
+/// The delayDismissDuration default value is 3.0.
+- (void)showWithDismissDelay:(NSTimeInterval)delay completion:(void (^ __nullable)(BOOL finished))completion;
 
 /// Show popView to super view.
 /// @param toView A super view.
 - (void)showToView:(UIView *)toView;
+
+
+/// A popView dismiss right now method.
+- (void)dismiss;
+
+/// A popView dismiss by a delay time
+/// @param delay a delay time
+- (void)dismissDelay:(NSTimeInterval)delay;
+
+/// A popView dismiss by a delay time and block
+/// @param delay a delay time
+/// @param completion a finish block
+- (void)dismissDelay:(NSTimeInterval)delay completion:(void (^ __nullable)(BOOL finished))completion;
+
 
 @end
 

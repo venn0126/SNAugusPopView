@@ -247,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = venn0126;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = AQDKUEE5C2;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -494,6 +497,7 @@
 			baseConfigurationReference = B1E7C931DD9C3C9F92DFA1D4 /* Pods-SNAugusPopView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AQDKUEE5C2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SNAugusPopView/SNAugusPopView-Prefix.pch";
 				INFOPLIST_FILE = "SNAugusPopView/SNAugusPopView-Info.plist";
@@ -510,6 +514,7 @@
 			baseConfigurationReference = 0991F5B4A451E1EA2B1DD9F0 /* Pods-SNAugusPopView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AQDKUEE5C2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SNAugusPopView/SNAugusPopView-Prefix.pch";
 				INFOPLIST_FILE = "SNAugusPopView/SNAugusPopView-Info.plist";

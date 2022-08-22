@@ -194,12 +194,12 @@ XCTAssertEqual(popView.alpha, 0.01, @"The popView should not visible"); \
     SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectZero text:@"" direction:SNAugusPopViewDirectionTop gradient:NO];
     [rootView addSubview:popView];
     
-    popView.animationDuration = 4.0;
+    popView.delayDismissDuration = 4.0;
     popView.showDuration = 0.5;
     popView.dismissDuration = 0.6;
     
-    XCTAssertNotNil(@(popView.animationDuration));
-    XCTAssertEqual(popView.animationDuration, 4.0);
+    XCTAssertNotNil(@(popView.delayDismissDuration));
+    XCTAssertEqual(popView.delayDismissDuration, 4.0);
     
     XCTAssertNotNil(@(popView.showDuration));
     XCTAssertEqual(popView.showDuration, 0.5);

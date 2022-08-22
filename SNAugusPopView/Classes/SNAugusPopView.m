@@ -44,13 +44,13 @@ static CGFloat kAugusLeftImageLabelPadding = 10.0;
 static NSString *SNAugusBorderLayerKey = @"SNAugusBorderLayerKey";
 static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
+
+typedef void(^PopViewCompletion)(BOOL);
 @interface SNAugusPopView ()
 
 
 /// The label show text.
 @property (nonatomic, strong) UILabel *textLabel;
-/// The popView is showing or not.
-@property (nonatomic, assign) BOOL showing;
 /// The popView's text is single or multiple.
 @property (nonatomic, assign) BOOL singleLine;
 /// The closeButton custom.
@@ -59,6 +59,8 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 @property (nonatomic, strong) UIImageView *leftImageView;
 /// The popView's gradient is effect or not.
 @property (nonatomic, assign) BOOL gradient;
+@property (nonatomic, copy) PopViewCompletion dismissDelayCompletion;
+
 
 
 @end
@@ -99,9 +101,10 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     // set defalut params
     _cornerRadius = kAugusPopViewCornerRadius;
     
-    _animationDuration = kAugusPopViewAnimationDuration;
+    _delayDismissDuration = kAugusPopViewAnimationDuration;
     _showDuration = kAugusPopViewShowDuration;
     _dismissDuration = kAugusPopViewDismissDuration;
+    _showing = NO;
     
     _labelHorizontalPadding = kAugusPopViewLabelHorizontalPadding;
     _labelVerticalPadding = kAugusPopViewLabelVerticalPadding;
@@ -311,8 +314,8 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 }
 
 
-- (void)setAnimationDuration:(NSTimeInterval)animationDuration {
-    _animationDuration = animationDuration;
+- (void)setDelayDismissDuration:(NSTimeInterval)animationDuration {
+    _delayDismissDuration = animationDuration;
 }
 
 
@@ -334,7 +337,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 - (void)setCloseButtonName:(NSString *)closeButtonName {
     _closeButtonName = closeButtonName;
-    [self configurePopView];
+    [self.closeButton setImage:[UIImage imageNamed:closeButtonName] forState:UIControlStateNormal];
 }
 
 - (void)setCloseButtonTopPadding:(CGFloat)closeButtonTopPadding {
@@ -351,7 +354,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 - (void)setLeftImageName:(NSString *)leftImageName {
     _leftImageName = leftImageName;
-    [self configurePopView];
+    self.leftImageView.image = [UIImage imageNamed:leftImageName];
 }
 
 
@@ -394,37 +397,32 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 - (void)setGradientColors:(NSArray *)gradientColors {
     _gradientColors = gradientColors;
-    [self configurePopView];
 }
 
 
 - (void)setGradientStartPoint:(CGPoint)gradientStartPoint {
     _gradientStartPoint = CGPointMake(gradientStartPoint.x, gradientStartPoint.y);
-    [self configurePopView];
 }
 
 
 - (void)setGradientEndPoint:(CGPoint)gradientEndPoint {
     _gradientEndPoint = CGPointMake(gradientEndPoint.x, gradientEndPoint.y);
-    [self configurePopView];
 }
 
 
 - (void)setGradientLocations:(NSArray<NSNumber *> *)gradientLocations {
     _gradientLocations = gradientLocations;
-    [self configurePopView];
 }
 
 
 - (void)setBorderWidth:(CGFloat)borderWidth {
     _borderWidth = borderWidth;
-    [self configurePopView];
 }
 
 
 - (void)setBorderColor:(UIColor *)borderColor {
     _borderColor = borderColor;
-    [self configurePopView];
+
 }
 
 
@@ -539,7 +537,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     
     // close button
     if (self.closeButtonName.length > 0) {
-        
+        [self.closeButton setImage:[UIImage imageNamed:self.closeButtonName] forState:UIControlStateNormal];
         if (self.singleLine) {
             
             CGFloat x = self.textLabel.frame.origin.x + self.textLabel.frame.size.width + self.closeButtonleading;
@@ -579,8 +577,8 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     }
     
     // update self frame
-    self.bounds = CGRectMake(0, 0, cWidth,cHeight);
-    self.hidden = YES;
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, cWidth,cHeight);
+//    self.hidden = YES;
     
     // draw background mask
     CGFloat offset = 0;
@@ -627,8 +625,8 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
     
     
     // layout
-    self.bounds = CGRectMake(0, 0, cWidth, cHeight);
-    self.hidden = YES;
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, cWidth,cHeight);
+//    self.hidden = YES;
     
     // draw background mask
     CGFloat offset = 0;
@@ -687,6 +685,22 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 
 -(CGFloat)maxWidth {
     return self.bounds.size.width;
+}
+
+
+/// Reset anchorPoint and update view frame
+/// @param anchorPoint a new anchorPoint
+- (void)resetAnchorPoint:(CGPoint)anchorPoint {
+    
+    
+    CGPoint oldOrigin = self.frame.origin;
+    self.layer.anchorPoint = anchorPoint;
+    CGPoint newOrigin = self.frame.origin;
+    
+    CGPoint transition;
+    transition.x = newOrigin.x - oldOrigin.x;
+    transition.y = newOrigin.y - oldOrigin.y;
+    self.center = CGPointMake(self.center.x - transition.x, self.center.y - transition.y);
 }
 
 
@@ -832,62 +846,83 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
 }
 
 
-#pragma mark - Animation Methods
+#pragma mark - Show Animation Methods
 
 - (void)show {
     
-    self.transform = CGAffineTransformMakeScale(0.01,0.01);
-    self.backgroundColor = [UIColor colorWithRed:self.aBackgroundRed green:self.aBackgroundGreen blue:self.aBackgroundBlue alpha:0.01];
+    [self showWithDismissDelay:-0.01 completion:nil];
+}
+
+
+- (void)showWithDismissDelay:(NSTimeInterval)delay {
+    
+    [self showWithDismissDelay:delay completion:nil];
+}
+
+
+- (void)showWithDismissDelay:(NSTimeInterval)delay completion:(void (^)(BOOL))completion {
+    
+    if (self.showing) {
+        return;
+    }
 
     CGFloat sWidth = self.bounds.size.width;
     CGFloat sHeight = self.bounds.size.height;
     if (self.direction == SNAugusPopViewDirectionTop) {
-        self.layer.anchorPoint = CGPointMake((self.arrowHorizontalPadding + self.arrowWidth * 0.5) / sWidth,self.arrowHeight / sHeight);
+        [self resetAnchorPoint:CGPointMake((self.arrowHorizontalPadding + self.arrowWidth * 0.5) / sWidth,self.arrowHeight / sHeight)];
     }else if(self.direction == SNAugusPopViewDirectionBottom) {
-        self.layer.anchorPoint = CGPointMake((self.arrowHorizontalPadding + self.arrowWidth * 0.5) / sWidth, (sHeight - self.arrowHeight) / sHeight);
+        [self resetAnchorPoint:CGPointMake((self.arrowHorizontalPadding + self.arrowWidth * 0.5) / sWidth, (sHeight - self.arrowHeight) / sHeight)];
     }else if(self.direction == SNAugusPopViewDirectionRight) {
-        self.layer.anchorPoint = CGPointMake(1.0, (self.arrowVerticalPadding + self.arrowWidth * 0.5) / sHeight);
+        [self resetAnchorPoint:CGPointMake(1.0, (self.arrowVerticalPadding + self.arrowWidth * 0.5) / sHeight)];
     }else if(self.direction == SNAugusPopViewDirectionLeft) {
-        self.layer.anchorPoint = CGPointMake(0.0, (self.arrowVerticalPadding + self.arrowWidth * 0.5) / sHeight);
+        [self resetAnchorPoint:CGPointMake(0.0, (self.arrowVerticalPadding + self.arrowWidth * 0.5) / sHeight)];
     } else {
         self.layer.anchorPoint = CGPointMake(0.5, 0.5);
     }
     
-    CGFloat duration = self.animationDuration > 0 ? self.animationDuration : kAugusPopViewAnimationDuration;
+    self.transform = CGAffineTransformMakeScale(0.01,0.01);
+    self.backgroundColor = [UIColor colorWithRed:self.aBackgroundRed green:self.aBackgroundGreen blue:self.aBackgroundBlue alpha:0.01];
+
+
+    __block CGFloat dismissDuration = self.delayDismissDuration > 0 ? self.delayDismissDuration : kAugusPopViewAnimationDuration;
     CGFloat showDuration = self.showDuration > 0 ? self.showDuration : kAugusPopViewShowDuration;
-        
+
+    // animation duration
     [UIView animateWithDuration:showDuration animations:^{
         self.backgroundColor = [UIColor colorWithRed:self.aBackgroundRed green:self.aBackgroundGreen blue:self.aBackgroundBlue alpha:self.aBackgroundShowAlpha];
-        self.hidden = NO;
+//        self.hidden = NO;
 
         self.transform = CGAffineTransformMakeScale(1, 1);
         self.showing = YES;
     } completion:^(BOOL finished) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-            NSLog(@"finish show");
-        });
         
+        // update duration, delay must greater than showDuration,or no working
+        if (delay > showDuration) {
+            dismissDuration = delay;
+            // animation delay dismiss
+            [self dismissDelay:dismissDuration completion:completion];
+        }
     }];
-
+    
 }
 
 
 #pragma mark - Dismiss Public Actions
 
 - (void)dismiss {
-    
-    [UIView animateWithDuration:self.dismissDuration animations:^{
-        self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.01];
-        self.transform = CGAffineTransformMakeScale(0.01, 0.01);
-    } completion:^(BOOL finished) {
-        self.showing = NO;
-    }];
+    [self dismissDelay:0.0 completion:nil];
 }
 
 
-- (void)dismissWithDelay:(NSTimeInterval)delay {
-    
+- (void)dismissDelay:(NSTimeInterval)delay {
+    [self dismissDelay:delay completion:nil];
+}
+
+
+- (void)dismissDelay:(NSTimeInterval)delay completion:(void(^__nullable)(BOOL))completion {
+    if (!self.showing) {
+        return;
+    }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [UIView animateWithDuration:self.dismissDuration animations:^{
@@ -895,21 +930,12 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
             self.transform = CGAffineTransformMakeScale(0.01, 0.01);
         } completion:^(BOOL finished) {
             self.showing = NO;
+            self.dismissDelayCompletion = completion;
+            if (self.dismissDelayCompletion) {
+                self.dismissDelayCompletion(!self.showing);
+            }
         }];
     });
-}
-
-
-- (void)dismissWithDelay:(NSTimeInterval)delay completion:(void (^)(BOOL))completion {
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [UIView animateWithDuration:self.dismissDuration animations:^{
-            self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.01];
-            self.transform = CGAffineTransformMakeScale(0.01, 0.01);
-        } completion:completion];
-    });
-    
 }
 
 - (void)showToView:(UIView *)toView {
@@ -922,6 +948,7 @@ static NSString *SNAugusBorderMaskName = @"SNAugusBorderMaskName";
         isContained = YES;
     }
     if (isContained) {
+        [self show];
         return;
     }
     [toView addSubview:self];
