@@ -444,6 +444,11 @@ typedef void(^PopViewCompletion)(BOOL);
     [self configureCustomView];
 }
 
+
+- (CGSize)contentSize {
+    return self.frame.size;
+}
+
 #pragma mark - Set up UI
 
 - (void)configurePopView {

@@ -150,6 +150,9 @@ typedef NS_ENUM(NSUInteger, SNAugusPopViewDirection) {
 /// The leftImageView's backgroundColor.
 @property (nonatomic, strong) UIColor *leftImageBackgroundColor;
 
+/// The popView's size.You must use it after initalizaiton.
+@property (nonatomic, assign) CGSize contentSize;
+
 // About gradient effect.
 /// The array of CGColorRef objects defining the color of each gradient stop. Defaults to nil. Animatable.
 @property (nonatomic, copy) NSArray *gradientColors;

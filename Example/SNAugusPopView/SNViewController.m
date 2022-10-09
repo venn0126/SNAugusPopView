@@ -233,6 +233,7 @@
             case 9:{
 
                 SNAugusPopView *popView = [[SNAugusPopView alloc] initWithFrame:CGRectMake(50, 730, 0, 0) text:@"用Siri使用搜狐新闻，设置语音唤醒" direction:SNAugusPopViewDirectionNone singleLine:YES closeButtonName:@"icotext_jump_v6" gradient:NO];
+                NSLog(@"siri contentSize is %@",NSStringFromCGSize(popView.contentSize));
                 popView.aBackgroundGreen = 0.93;
                 popView.aBackgroundRed = 0.93;
                 popView.aBackgroundBlue = 0.93;
