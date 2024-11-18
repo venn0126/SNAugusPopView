@@ -61,6 +61,9 @@ typedef void(^PopViewCompletion)(BOOL);
 @property (nonatomic, assign) BOOL gradient;
 @property (nonatomic, copy) PopViewCompletion dismissDelayCompletion;
 
+@property (nonatomic, assign) CGFloat cachedTextWidth;
+@property (nonatomic, assign) CGFloat cachedTextHeight;
+
 
 
 @end
@@ -224,6 +227,15 @@ typedef void(^PopViewCompletion)(BOOL);
 }
 
 #pragma mark - Setter
+
+- (void)setText:(NSString *)text {
+    if (_text != text) {
+        _text = [text copy];
+        _cachedTextWidth = 0;
+        _cachedTextHeight = 0;
+        [self setNeedsLayout];
+    }
+}
 
 - (void)setTextFont:(UIFont *)textFont {
     
@@ -666,26 +678,44 @@ typedef void(^PopViewCompletion)(BOOL);
 
 - (CGFloat)textHeight {
     
-    if (self.text.length <= 0) {
-        return 0;
+    if (_cachedTextHeight > 0) {
+        return _cachedTextHeight;
     }
-    
-    CGSize maxSize = CGSizeMake(self.maxWidth - kAugusPopViewLabelHorizontalPadding * 2, CGFLOAT_MAX);
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.textLabel.font,NSFontAttributeName, nil];
-    CGSize size = [self.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dict context:nil].size;
-    return size.height;
-}
-
-- (CGFloat)textWidth {
     
     if (self.text.length <= 0) {
         return 0;
     }
     
     CGSize maxSize = CGSizeMake(CGFLOAT_MAX, self.bounds.size.height);
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.textLabel.font,NSFontAttributeName, nil];
-    CGSize size = [self.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:dict context:nil].size;
-    return size.width;
+    NSDictionary *attrs = @{NSFontAttributeName: self.textLabel.font};
+    CGSize size = [self.text boundingRectWithSize:maxSize
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:attrs
+                                          context:nil].size;
+    _cachedTextHeight = ceil(size.height);
+    return _cachedTextHeight;
+}
+
+- (CGFloat)textWidth {
+    
+    
+    if (_cachedTextWidth > 0) {
+        return _cachedTextWidth;
+    }
+    
+    if (self.text.length <= 0) {
+        return 0;
+    }
+    
+    CGSize maxSize = CGSizeMake(CGFLOAT_MAX, self.bounds.size.height);
+    NSDictionary *attrs = @{NSFontAttributeName: self.textLabel.font};
+    CGSize size = [self.text boundingRectWithSize:maxSize
+                                          options:NSStringDrawingUsesLineFragmentOrigin
+                                       attributes:attrs
+                                          context:nil].size;
+    _cachedTextWidth = ceil(size.width);
+    return _cachedTextWidth;
+    
 }
 
 -(CGFloat)maxWidth {
@@ -971,6 +1001,12 @@ typedef void(^PopViewCompletion)(BOOL);
 
 - (void)closeButtonAction:(UIButton *)sender {
     [self dismiss];
+}
+
+
+- (void)dealloc {
+    [self removeSomeLayer];
+    self.dismissDelayCompletion = nil;
 }
 
 
