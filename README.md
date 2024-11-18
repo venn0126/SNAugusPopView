@@ -1,6 +1,6 @@
 # SNAugusPopView
 
-[![CI Status](https://travis-ci.org/dwyl/esta.svg?branch=master)](https://cocoapods.org/pods/SNAugusPopView)
+[![Build Status](https://travis-ci.org/pc035860/angular-easyfb.svg?branch=master)](https://travis-ci.org/pc035860/angular-easyfb)
 [![Version](https://img.shields.io/cocoapods/v/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
 [![License](https://img.shields.io/cocoapods/l/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
 [![Platform](https://img.shields.io/cocoapods/p/SNAugusPopView.svg?style=flat)](https://cocoapods.org/pods/SNAugusPopView)
